@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbdiq8vsr0rp8"]
+
+[ext_resource type="Texture2D" uid="uid://dtqy3ihppcvrj" path="res://gm assets/GUI/Tileset_GUI.png" id="1_sgt7s"]
+[ext_resource type="Script" path="res://fragmentui.gd" id="2_c4b82"]
+[ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="3_nabf8"]
+[ext_resource type="Texture2D" uid="uid://1g6lrnybce1h" path="res://gm assets/40 Random Items/GreenBalls.png" id="4_64k35"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyhn2"]
+shader = ExtResource("3_nabf8")
+
+[node name="fragmentui" type="Sprite2D"]
+position = Vector2(17.5, 0)
+scale = Vector2(1.7, 1)
+texture = ExtResource("1_sgt7s")
+region_enabled = true
+region_rect = Rect2(-2, 283, 50, 23)
+script = ExtResource("2_c4b82")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyhn2")
+position = Vector2(13.2353, -1)
+scale = Vector2(0.369485, 0.59375)
+texture = ExtResource("4_64k35")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -12.6471
+offset_top = -5.0
+offset_right = 21.3529
+offset_bottom = 18.0
+scale = Vector2(0.6455, 0.31291)

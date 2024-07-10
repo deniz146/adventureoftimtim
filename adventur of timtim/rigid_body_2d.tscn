@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bng3kxow07y3s"]
+
+[ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_epait"]
+[ext_resource type="Texture2D" uid="uid://c2yakcga3xjc3" path="res://gm assets/GothicVania-town-files/PNG/environment/props-sliced/crate.png" id="1_hho1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gjam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8unn"]
+shader = ExtResource("1_epait")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_q0iol"]
+polygon = PackedVector2Array(-10, -10, 9, -10, 10, 10, -10, 10)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8gjam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_c8unn")
+scale = Vector2(0.534334, 0.55174)
+texture = ExtResource("1_hho1j")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_q0iol")

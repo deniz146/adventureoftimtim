@@ -1,0 +1,398 @@
+[gd_scene load_steps=42 format=3 uid="uid://bypcofnin205c"]
+
+[ext_resource type="Script" path="res://scripts/enemy_movement.gd" id="1_2sc4d"]
+[ext_resource type="PackedScene" uid="uid://cvgx8a1ffqgd6" path="res://adventur of timtim/bullet.tscn" id="2_4cebw"]
+[ext_resource type="Texture2D" uid="uid://c63fg705hf316" path="res://Fire vizard/Hurt.png" id="3_ly0n7"]
+[ext_resource type="Texture2D" uid="uid://d3cp2wd7c7q0i" path="res://Fire vizard/Dead.png" id="4_4oevt"]
+[ext_resource type="Texture2D" uid="uid://8xmnsfg66apt" path="res://gm assets/GUI/Text2_white.png" id="4_h2aka"]
+[ext_resource type="Texture2D" uid="uid://b8maofgb4rt53" path="res://Fire vizard/Walk.png" id="5_8odn5"]
+[ext_resource type="Script" path="res://adventur of timtim/ProgressBar.gd" id="5_ly1i4"]
+[ext_resource type="Texture2D" uid="uid://drioe8pmrukik" path="res://Fire vizard/Fireball.png" id="6_03ow8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndbff"]
+atlas = ExtResource("3_ly0n7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc8kn"]
+atlas = ExtResource("3_ly0n7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaryc"]
+atlas = ExtResource("3_ly0n7")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbbwo"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4mb3"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lelx0"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr1fb"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3de6"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyppg"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xu45"]
+atlas = ExtResource("4_4oevt")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ykq6"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc4jr"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnxiy"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh8r2"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoj25"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jg1b"]
+atlas = ExtResource("5_8odn5")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6tno"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcy11"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwfx"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qsn"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wa0j"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn5wb"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ismcc"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go3j6"]
+atlas = ExtResource("6_03ow8")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uagsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndbff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc8kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaryc")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbbwo")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4mb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lelx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr1fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3de6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyppg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xu45")
+}],
+"loop": true,
+"name": &"enemy_death",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ykq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc4jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnxiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh8r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoj25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jg1b")
+}],
+"loop": true,
+"name": &"enemy_run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6tno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcy11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0qsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wa0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn5wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ismcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go3j6")
+}],
+"loop": true,
+"name": &"enemy_shoot",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr72n"]
+size = Vector2(61.9565, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsxh5"]
+size = Vector2(15, 21)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooa23"]
+radius = 6.21053
+height = 20.1176
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h77uj"]
+size = Vector2(12.421, 20)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bolev"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q83m2"]
+bg_color = Color(0.294118, 0.698039, 0.345098, 1)
+corner_radius_top_left = 330
+corner_radius_top_right = 330
+corner_radius_bottom_right = 330
+corner_radius_bottom_left = 330
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cxxg"]
+bg_color = Color(0.215686, 0.215686, 0.215686, 1)
+corner_radius_top_left = 330
+corner_radius_top_right = 330
+corner_radius_bottom_right = 330
+corner_radius_bottom_left = 330
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaeys"]
+bg_color = Color(0.964706, 0.964706, 0.964706, 1)
+corner_radius_top_left = 330
+corner_radius_top_right = 330
+corner_radius_bottom_right = 330
+corner_radius_bottom_left = 330
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 33280
+collision_mask = 33280
+script = ExtResource("1_2sc4d")
+ammo = ExtResource("2_4cebw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uagsq")
+animation = &"enemy_shoot"
+frame_progress = 0.847352
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(15, 18)
+scale = Vector2(1.29936, 1.96552)
+target_position = Vector2(123.907, 0.508773)
+collision_mask = 8
+
+[node name="blood" type="CPUParticles2D" parent="."]
+position = Vector2(-7, -9)
+rotation = -0.173953
+emitting = false
+amount = 200
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.07
+randomness = 0.54
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.01
+gravity = Vector2(0, 3000)
+initial_velocity_min = 409.92
+initial_velocity_max = 1000.0
+angular_velocity_min = -20.0
+angular_velocity_max = 120.0
+scale_amount_max = 4.0
+color = Color(0.592157, 0.0313726, 0.0352941, 1)
+hue_variation_min = 0.61
+hue_variation_max = 1.0
+
+[node name="timers" type="Node" parent="."]
+
+[node name="areas" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.187
+
+[node name="enemy vanish" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="player detection" type="Area2D" parent="."]
+position = Vector2(-116, 42)
+scale = Vector2(2.68466, 2.12006)
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player detection"]
+position = Vector2(78.2608, -6)
+shape = SubResource("RectangleShape2D_pr72n")
+
+[node name="enemy turn collision" type="Area2D" parent="."]
+position = Vector2(-13, 22)
+scale = Vector2(2.01935, 3.95918)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy turn collision"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_lsxh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 40)
+scale = Vector2(2.34211, 2.56841)
+shape = SubResource("CapsuleShape2D_ooa23")
+
+[node name="getting shot" type="Area2D" parent="CollisionShape2D"]
+position = Vector2(0, -2.87142)
+scale = Vector2(1.13424, 1.17831)
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/getting shot"]
+position = Vector2(9.2544e-07, 0)
+shape = SubResource("RectangleShape2D_h77uj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(10, -3)
+
+[node name="enemy seen" type="Timer" parent="."]
+
+[node name="seen" type="Sprite2D" parent="."]
+modulate = Color(0.694118, 0, 0.145098, 1)
+position = Vector2(-13, -32)
+scale = Vector2(6.40102, 4.2759)
+texture = ExtResource("4_h2aka")
+region_enabled = true
+region_rect = Rect2(21, 24, 1, 5)
+
+[node name="getting burned" type="Area2D" parent="."]
+position = Vector2(-16, 30)
+scale = Vector2(2.90566, 3.51852)
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="getting burned"]
+shape = SubResource("CapsuleShape2D_ooa23")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -35.0
+offset_top = -15.0
+offset_right = -14.0
+offset_bottom = -11.0
+scale = Vector2(2.35714, 1.84286)
+theme_override_styles/background = SubResource("StyleBoxEmpty_bolev")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q83m2")
+value = 50.0
+rounded = true
+show_percentage = false
+script = ExtResource("5_ly1i4")
+
+[node name="ProgressBar" type="ProgressBar" parent="ProgressBar"]
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 10.5
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8cxxg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oaeys")
+value = 29.59
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 18.176
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="enemy vanish" to="." method="_on_enemy_vanish_timeout"]
+[connection signal="area_shape_entered" from="player detection" to="." method="_on_player_detection_area_shape_entered"]
+[connection signal="area_shape_exited" from="player detection" to="." method="_on_player_detection_area_shape_exited"]
+[connection signal="area_shape_entered" from="enemy turn collision" to="." method="_on_enemy_turn_collision_area_shape_entered"]
+[connection signal="area_shape_entered" from="CollisionShape2D/getting shot" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="timeout" from="enemy seen" to="." method="_on_enemy_seen_timeout"]
+[connection signal="area_shape_entered" from="getting burned" to="." method="_on_getting_burned_area_shape_entered"]
+[connection signal="area_shape_exited" from="getting burned" to="." method="_on_getting_burned_area_shape_exited"]
+[connection signal="timeout" from="ProgressBar/Timer" to="ProgressBar" method="_on_timer_timeout"]

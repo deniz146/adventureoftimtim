@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvgx8a1ffqgd6"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_p3gsn"]
+[ext_resource type="Texture2D" uid="uid://bqhccm5fko0nk" path="res://gm assets/Enemies/Black-Square-PNG-Photos.png" id="2_hncia"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mm8c0"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbicr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_neuem"]
+
+[node name="bullet" type="Area2D"]
+scale = Vector2(0.194754, 0.222493)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_p3gsn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.54902, 0.54902, 0.54902, 1)
+self_modulate = Color(0.666667, 0.666667, 0.666667, 1)
+material = SubResource("CanvasItemMaterial_mm8c0")
+scale = Vector2(0.130749, 0.0147603)
+texture = ExtResource("2_hncia")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xbicr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_neuem")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

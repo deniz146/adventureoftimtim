@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4sjqruorntah"]
+
+[ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_a0oyv"]
+[ext_resource type="Script" path="res://adventur of timtim/manaitem.gd" id="1_cjupp"]
+[ext_resource type="Texture2D" uid="uid://cbsutabeuwtjv" path="res://gm assets/40 Random Items/SnowBall.png" id="2_e6eyg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1uyi"]
+shader = ExtResource("1_a0oyv")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6tg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v6mn"]
+size = Vector2(12, 11)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_cjupp")
+
+[node name="manaitem" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 1, 1, 1)
+material = SubResource("ShaderMaterial_c1uyi")
+texture = ExtResource("2_e6eyg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2097152
+collision_mask = 2097152
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h6tg8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7v6mn")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

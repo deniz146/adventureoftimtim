@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxedlnrwv4swv"]
+
+[ext_resource type="Script" path="res://adventur of timtim/fire.gd" id="1_l4ijp"]
+[ext_resource type="Texture2D" uid="uid://cngwyx6dvnepc" path="res://gm assets/Foozle_2DE0001_Pixel_Magic_Effects/Pixel_Magic_Effects_Animations.png" id="1_x8pl2"]
+[ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="2_gj3fc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwop5"]
+shader = ExtResource("2_gj3fc")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm47u"]
+radius = 15.5745
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kwjsh"]
+radius = 14.7268
+
+[node name="fire" type="CharacterBody2D"]
+position = Vector2(7, 16)
+scale = Vector2(0.827116, 0.80902)
+collision_layer = 0
+script = ExtResource("1_l4ijp")
+
+[node name="firesprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nwop5")
+position = Vector2(-8, -20)
+scale = Vector2(0.349586, 0.355988)
+texture = ExtResource("1_x8pl2")
+region_enabled = true
+region_rect = Rect2(14, 257, 52, 56)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8, -20)
+rotation = 3.14159
+scale = Vector2(0.770489, 0.714207)
+collision_layer = 33554432
+collision_mask = 33554432
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rm47u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -20)
+rotation = 3.14159
+scale = Vector2(0.770489, 0.714207)
+shape = SubResource("CircleShape2D_kwjsh")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

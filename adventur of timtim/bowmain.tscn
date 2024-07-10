@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://df5o4ttsmt5uk"]
+
+[ext_resource type="Texture2D" uid="uid://cgdaow418yqen" path="res://gm assets/Bow Pack.png" id="1_odhht"]
+[ext_resource type="Script" path="res://bow.gd" id="2_0j2v5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm47u"]
+radius = 15.5745
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kwjsh"]
+radius = 14.7268
+
+[node name="bowmain" type="CharacterBody2D"]
+position = Vector2(7, 16)
+scale = Vector2(0.827116, 0.80902)
+collision_layer = 0
+script = ExtResource("2_0j2v5")
+
+[node name="bow" type="Sprite2D" parent="."]
+position = Vector2(-8, -20)
+scale = Vector2(-0.770489, -0.714207)
+texture = ExtResource("1_odhht")
+region_enabled = true
+region_rect = Rect2(-2, 97, 27, 24)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8, -20)
+rotation = 3.14159
+scale = Vector2(0.770489, 0.714207)
+collision_layer = 16777216
+collision_mask = 16777216
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rm47u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -20)
+rotation = 3.14159
+scale = Vector2(0.770489, 0.714207)
+shape = SubResource("CircleShape2D_kwjsh")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

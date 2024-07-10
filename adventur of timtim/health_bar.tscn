@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdfdfgro3j6va"]
+
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_thwxl"]
+[ext_resource type="Texture2D" uid="uid://dh7b4w0hevgp5" path="res://gm assets/GUI/health2.png" id="2_74ffs"]
+[ext_resource type="Texture2D" uid="uid://dwqxhal5ab0eg" path="res://gm assets/GUI/health.png" id="3_tu3l8"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_thwxl")
+
+[node name="health" type="TextureProgressBar" parent="."]
+z_index = 4
+offset_left = 239.332
+offset_top = 227.0
+offset_right = 2719.33
+offset_bottom = 3735.0
+rotation = -1.57599
+scale = Vector2(0.0258331, 0.0522674)
+max_value = 33.0
+fill_mode = 1
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.498039, 0.105882, 1)
+
+[node name="mana1" type="TextureProgressBar" parent="."]
+z_index = 3
+offset_left = 213.0
+offset_top = 233.0
+offset_right = 2693.0
+offset_bottom = 3741.0
+rotation = -1.57599
+scale = Vector2(0.0334448, 0.059151)
+max_value = 33.0
+fill_mode = 1
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_progress = Color(0, 0.611765, 0.611765, 1)
+
+[node name="TextureProgressBar7" type="TextureProgressBar" parent="."]
+z_index = 2
+offset_left = 187.0
+offset_top = 239.0
+offset_right = 2667.0
+offset_bottom = 3747.0
+rotation = -1.57599
+scale = Vector2(0.0385964, 0.072729)
+max_value = 33.0
+fill_mode = 1
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.498039, 0.105882, 1)
+
+[node name="health2" type="TextureProgressBar" parent="."]
+z_index = 4
+offset_left = 318.333
+offset_top = 139.0
+offset_right = 2798.33
+offset_bottom = 3647.0
+scale = Vector2(0.05453, 0.0439101)
+min_value = 33.0
+max_value = 66.0
+value = 34.0
+fill_mode = 5
+texture_under = ExtResource("3_tu3l8")
+texture_progress = ExtResource("3_tu3l8")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.498039, 0.105882, 1)
+radial_initial_angle = 270.0
+radial_fill_degrees = 270.0
+
+[node name="mana2" type="TextureProgressBar" parent="."]
+z_index = 3
+offset_left = 302.098
+offset_top = 126.0
+offset_right = 2782.1
+offset_bottom = 3634.0
+scale = Vector2(0.0671331, 0.0519806)
+min_value = 33.0
+max_value = 66.0
+value = 34.0
+fill_mode = 5
+texture_under = ExtResource("3_tu3l8")
+texture_progress = ExtResource("3_tu3l8")
+tint_progress = Color(0, 0.611765, 0.611765, 1)
+radial_initial_angle = 270.0
+radial_fill_degrees = 270.0
+
+[node name="TextureProgressBar8" type="TextureProgressBar" parent="."]
+z_index = 2
+offset_left = 298.0
+offset_top = 122.0
+offset_right = 2778.0
+offset_bottom = 3630.0
+scale = Vector2(0.0688538, 0.0547467)
+min_value = 33.0
+max_value = 66.0
+value = 34.0
+fill_mode = 5
+texture_under = ExtResource("3_tu3l8")
+texture_progress = ExtResource("3_tu3l8")
+tint_under = Color(0.0392157, 0.0392157, 0.0392157, 1)
+tint_progress = Color(0, 0, 0, 1)
+radial_initial_angle = 270.0
+radial_fill_degrees = 270.0
+
+[node name="health3" type="TextureProgressBar" parent="."]
+z_index = 4
+offset_left = 342.333
+offset_top = 173.0
+offset_right = 2822.33
+offset_bottom = 3681.0
+scale = Vector2(0.0915385, 0.0419053)
+min_value = 66.0
+value = 68.0
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.498039, 0.105882, 1)
+
+[node name="mana3" type="TextureProgressBar" parent="."]
+z_index = 3
+offset_left = 322.0
+offset_top = 172.0
+offset_right = 2802.0
+offset_bottom = 3680.0
+scale = Vector2(0.113273, 0.046672)
+min_value = 66.0
+value = 67.0
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_progress = Color(0, 0.611765, 0.611765, 1)
+
+[node name="TextureProgressBar9" type="TextureProgressBar" parent="."]
+z_index = 2
+offset_left = 324.0
+offset_top = 132.0
+offset_right = 2804.0
+offset_bottom = 3640.0
+scale = Vector2(0.113733, 0.0684007)
+min_value = 66.0
+value = 67.0
+texture_under = ExtResource("2_74ffs")
+texture_progress = ExtResource("2_74ffs")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 0.498039, 0.105882, 1)

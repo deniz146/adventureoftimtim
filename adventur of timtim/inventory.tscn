@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://birdrsfh4buds"]
+
+[ext_resource type="PackedScene" uid="uid://gjxvi283lsac" path="res://adventur of timtim/bullet_case.tscn" id="1_ksigh"]
+[ext_resource type="Script" path="res://adventur of timtim/inventory.gd" id="1_nmert"]
+[ext_resource type="Texture2D" uid="uid://dd7lcgnbcx3er" path="res://adventur of timtim/Bow Pack.png" id="3_ir48i"]
+[ext_resource type="Texture2D" uid="uid://cngwyx6dvnepc" path="res://gm assets/Foozle_2DE0001_Pixel_Magic_Effects/Pixel_Magic_Effects_Animations.png" id="4_ptt2x"]
+
+[node name="inventory" type="Sprite2D"]
+script = ExtResource("1_nmert")
+
+[node name="bullet case" parent="." instance=ExtResource("1_ksigh")]
+
+[node name="bullet case2" parent="." instance=ExtResource("1_ksigh")]
+position = Vector2(39, 0)
+
+[node name="bullet case3" parent="." instance=ExtResource("1_ksigh")]
+position = Vector2(77, 0)
+
+[node name="bullet case4" parent="." instance=ExtResource("1_ksigh")]
+position = Vector2(117, 0)
+
+[node name="bow" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(-0.603699, -0.597529)
+texture = ExtResource("3_ir48i")
+region_enabled = true
+region_rect = Rect2(0, 95, 26, 26)
+
+[node name="Label" type="Label" parent="bow"]
+offset_left = -1.65645
+offset_right = 35.3435
+offset_bottom = 23.0
+scale = Vector2(-0.390529, -0.628225)
+
+[node name="fire" type="Sprite2D" parent="."]
+position = Vector2(40, -1.90735e-06)
+rotation = 0.545698
+scale = Vector2(0.270293, 0.283763)
+texture = ExtResource("4_ptt2x")
+region_enabled = true
+region_rect = Rect2(0, 0, 76, 62)
+
+[node name="special1" type="Sprite2D" parent="."]
+modulate = Color(0.772549, 0, 0.780392, 1)
+position = Vector2(77, 2)
+scale = Vector2(0.385252, 0.383566)
+texture = ExtResource("4_ptt2x")
+region_enabled = true
+region_rect = Rect2(321, 260, 62, 60)
+
+[node name="special2" type="Sprite2D" parent="."]
+modulate = Color(0, 0.921569, 0.34902, 1)
+position = Vector2(118, 1)
+scale = Vector2(0.309576, 0.29393)
+texture = ExtResource("4_ptt2x")
+region_enabled = true
+region_rect = Rect2(263, 513, 53, 62)

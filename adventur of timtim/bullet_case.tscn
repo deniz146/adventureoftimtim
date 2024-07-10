@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gjxvi283lsac"]
+
+[ext_resource type="Texture2D" uid="uid://dtqy3ihppcvrj" path="res://gm assets/GUI/Tileset_GUI.png" id="1_rotkd"]
+[ext_resource type="Script" path="res://scripts/bullet case.gd" id="2_4hvyx"]
+
+[node name="bullet case" type="Sprite2D"]
+texture = ExtResource("1_rotkd")
+region_enabled = true
+region_rect = Rect2(104, 8, 32, 31)
+script = ExtResource("2_4hvyx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 30.0
+offset_bottom = 16.0
+scale = Vector2(0.40246, 0.648607)

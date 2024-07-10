@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcjdmobbrncf1"
+path="res://.godot/imported/rpg_village02_loop.mp3-d1df16ee0bf97cd9a5d6c8a11a4eeff5.mp3str"
+
+[deps]
+
+source_file="res://gm assets/GothicVania-town-files/Music/rpg_village02_loop.mp3"
+dest_files=["res://.godot/imported/rpg_village02_loop.mp3-d1df16ee0bf97cd9a5d6c8a11a4eeff5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

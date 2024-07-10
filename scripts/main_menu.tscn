@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://b83j3klwewt1c"]
+
+[ext_resource type="Script" path="res://scripts/main menu.gd" id="1_wt3ub"]
+[ext_resource type="VideoStream" path="res://video/0001-0060.ogv" id="2_v5nki"]
+
+[node name="main menu" type="Control"]
+custom_minimum_size = Vector2(0.1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.998323, 1.00238)
+script = ExtResource("1_wt3ub")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.667603, 0.657302)
+stream = ExtResource("2_v5nki")
+autoplay = true
+loop = true
+buffering_msec = 17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(-0.005, 0)
+layout_mode = 1
+offset_left = 83.1394
+offset_top = 85.7957
+offset_right = 175.139
+offset_bottom = 186.796
+scale = Vector2(2.51094, 1.90288)
+
+[node name="start game" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../quit")
+text = "start game"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "options"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../start game")
+text = "quit"
+
+[connection signal="pressed" from="VBoxContainer/start game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
