@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgxws8r6besff"]
 
-[ext_resource type="Texture2D" uid="uid://cngwyx6dvnepc" path="res://gm assets/Foozle_2DE0001_Pixel_Magic_Effects/Pixel_Magic_Effects_Animations.png" id="1_c4h5d"]
 [ext_resource type="Script" path="res://adventur of timtim/special_1.gd" id="1_n5pv3"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="2_e32yj"]
+[ext_resource type="Texture2D" uid="uid://dmr4csj1nyrmf" path="res://gm assets/RPG Icon Pack - 400+ Skills and Spells - Clockwork Raven Studios/icons64x64.png" id="3_ql0hw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4cybv"]
 shader = ExtResource("2_e32yj")
@@ -22,10 +22,10 @@ script = ExtResource("1_n5pv3")
 [node name="special1sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_4cybv")
 position = Vector2(-8, -20)
-scale = Vector2(-0.369472, -0.351772)
-texture = ExtResource("1_c4h5d")
+scale = Vector2(0.385374, 0.401752)
+texture = ExtResource("3_ql0hw")
 region_enabled = true
-region_rect = Rect2(323, 264, 61, 52)
+region_rect = Rect2(11, 133, 37, 53)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-8, -20)

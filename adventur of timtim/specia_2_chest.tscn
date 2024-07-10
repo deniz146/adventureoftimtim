@@ -1,96 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8hf8wr2cb1ug"]
+[gd_scene load_steps=13 format=3 uid="uid://c8hf8wr2cb1ug"]
 
 [ext_resource type="Script" path="res://specia2chest.gd" id="1_gpst0"]
 [ext_resource type="Texture2D" uid="uid://c2gdv5mjsye35" path="res://adventur of timtim/—Pngtree—brush circle creative brush effect_60205152.png" id="2_vvxmy"]
-[ext_resource type="Texture2D" uid="uid://cngwyx6dvnepc" path="res://gm assets/Foozle_2DE0001_Pixel_Magic_Effects/Pixel_Magic_Effects_Animations.png" id="3_wrea7"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="4_ur7uj"]
+[ext_resource type="Texture2D" uid="uid://dmr4csj1nyrmf" path="res://gm assets/RPG Icon Pack - 400+ Skills and Spells - Clockwork Raven Studios/icons64x64.png" id="4_w2exw"]
 [ext_resource type="Texture2D" uid="uid://dv1e11l84uieq" path="res://gm assets/Animated Chests/Chests.png" id="5_ynw8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxa5u"]
+shader = ExtResource("4_ur7uj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxkjx"]
 shader = ExtResource("4_ur7uj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rev40"]
 size = Vector2(40, 28)
-
-[sub_resource type="Animation" id="Animation_1tnic"]
-resource_name = "special2chest"
-length = 3.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 39, 39]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../energy:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../energy:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.6, 1.7, 1.8, 1.9, 2, 2.2, 2.3, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-8, 14), Vector2(-7.53192, 10.6308), Vector2(-7.53192, 8.17751), Vector2(-7.53192, 4.90651), Vector2(-7.53192, 0), Vector2(-7.53192, -7.35976), Vector2(-7.53192, -14.7195), Vector2(-7.53192, -22.0793), Vector2(-7.53192, -17.9905)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../special2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../special2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.6, 1.8, 1.9, 2, 2.2, 2.3, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-7.53192, 8.99526), Vector2(-7.53192, 8.99526), Vector2(-7.53192, 2.45325), Vector2(-7.53192, -1.6355), Vector2(-7.53192, -8.17751), Vector2(-7.53192, -15.5373), Vector2(-7.53192, -22.897), Vector2(-7.53192, -18.8083)]
-}
-
-[sub_resource type="Animation" id="Animation_jwa3b"]
-resource_name = "press f"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_bgepp"]
 length = 0.001
@@ -167,6 +90,86 @@ tracks/5/keys = {
 "values": [Vector2(-7.53192, 8.99526)]
 }
 
+[sub_resource type="Animation" id="Animation_jwa3b"]
+resource_name = "press f"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1tnic"]
+resource_name = "special2chest"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 39, 39]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../energy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../energy:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.7, 1.8, 1.9, 2, 2.2, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, 14), Vector2(-7.53192, 10.6308), Vector2(-7.53192, 8.17751), Vector2(-7.53192, 4.90651), Vector2(-7.53192, 0), Vector2(-7.53192, -7.35976), Vector2(-7.53192, -14.7195), Vector2(-7.53192, -22.0793), Vector2(-7.53192, -17.9905)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../special2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../special2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.8, 1.9, 2, 2.2, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7.53192, 8.99526), Vector2(-7.53192, 8.99526), Vector2(-7.53192, 2.45325), Vector2(-7.53192, -1.6355), Vector2(-7.53192, -8.17751), Vector2(-7.53192, -15.5373), Vector2(-7.53192, -22.897), Vector2(-7.53192, -18.8083)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28uf4"]
 _data = {
 "RESET": SubResource("Animation_bgepp"),
@@ -187,11 +190,12 @@ texture = ExtResource("2_vvxmy")
 
 [node name="special2" type="Sprite2D" parent="."]
 visible = false
+material = SubResource("ShaderMaterial_lxa5u")
 position = Vector2(-7.53192, 8.99526)
-scale = Vector2(0.247236, 0.189371)
-texture = ExtResource("3_wrea7")
+scale = Vector2(0.181879, 0.148453)
+texture = ExtResource("4_w2exw")
 region_enabled = true
-region_rect = Rect2(261, 512, 53, 56)
+region_rect = Rect2(9, 193, 39, 66)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xxkjx")

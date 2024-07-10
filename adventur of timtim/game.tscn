@@ -5760,13 +5760,13 @@ libraries = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
-[node name="health_bar" parent="CanvasLayer" instance=ExtResource("7_tdc27")]
-position = Vector2(-362, 306)
-scale = Vector2(1.2985, 1.40187)
-
 [node name="Sprite2D" parent="CanvasLayer" instance=ExtResource("8_knbda")]
-position = Vector2(171, 594)
-scale = Vector2(3.20587, 2.19415)
+position = Vector2(863, 600)
+scale = Vector2(3.83672, 4.25239)
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource("7_tdc27")]
+position = Vector2(60, 557)
+scale = Vector2(1.85783, 1.77771)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -3

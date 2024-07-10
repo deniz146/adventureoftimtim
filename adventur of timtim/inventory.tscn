@@ -1,57 +1,103 @@
-[gd_scene load_steps=5 format=3 uid="uid://birdrsfh4buds"]
+[gd_scene load_steps=13 format=3 uid="uid://birdrsfh4buds"]
 
 [ext_resource type="PackedScene" uid="uid://gjxvi283lsac" path="res://adventur of timtim/bullet_case.tscn" id="1_ksigh"]
 [ext_resource type="Script" path="res://adventur of timtim/inventory.gd" id="1_nmert"]
-[ext_resource type="Texture2D" uid="uid://dd7lcgnbcx3er" path="res://adventur of timtim/Bow Pack.png" id="3_ir48i"]
-[ext_resource type="Texture2D" uid="uid://cngwyx6dvnepc" path="res://gm assets/Foozle_2DE0001_Pixel_Magic_Effects/Pixel_Magic_Effects_Animations.png" id="4_ptt2x"]
+[ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="3_jnxis"]
+[ext_resource type="Texture2D" uid="uid://c4afrh2rc5j0x" path="res://gm assets/UI assets pack 2/UI books & more.png" id="4_wsfvu"]
+[ext_resource type="Texture2D" uid="uid://d1evyu0eskxsv" path="res://gm assets/Clockwork raven - Weapons and Potions - Free pack/icons16x16.png" id="5_b02ej"]
+[ext_resource type="Texture2D" uid="uid://dxi8f0vf12ije" path="res://gm assets/RPG Icon Pack - 400+ Skills and Spells - Clockwork Raven Studios/icons16x16.png" id="6_6h8g6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0g1dy"]
+shader = ExtResource("3_jnxis")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_slf4g"]
+shader = ExtResource("3_jnxis")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sr7p"]
+shader = ExtResource("3_jnxis")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpnm4"]
+shader = ExtResource("3_jnxis")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3kct4"]
+shader = ExtResource("3_jnxis")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lk84t"]
+shader = ExtResource("3_jnxis")
 
 [node name="inventory" type="Sprite2D"]
 script = ExtResource("1_nmert")
 
 [node name="bullet case" parent="." instance=ExtResource("1_ksigh")]
+material = SubResource("ShaderMaterial_0g1dy")
+position = Vector2(0, 1)
+scale = Vector2(0.477753, 0.477923)
+texture = ExtResource("4_wsfvu")
+region_rect = Rect2(766, 63, 53, 53)
 
 [node name="bullet case2" parent="." instance=ExtResource("1_ksigh")]
-position = Vector2(39, 0)
+material = SubResource("ShaderMaterial_0g1dy")
+position = Vector2(28, 1)
+scale = Vector2(0.477753, 0.477923)
+texture = ExtResource("4_wsfvu")
+region_rect = Rect2(766, 63, 53, 53)
 
 [node name="bullet case3" parent="." instance=ExtResource("1_ksigh")]
-position = Vector2(77, 0)
+material = SubResource("ShaderMaterial_0g1dy")
+position = Vector2(56, 1)
+scale = Vector2(0.477753, 0.477923)
+texture = ExtResource("4_wsfvu")
+region_rect = Rect2(766, 63, 53, 53)
 
 [node name="bullet case4" parent="." instance=ExtResource("1_ksigh")]
-position = Vector2(117, 0)
+self_modulate = Color(0.86142, 0.861003, 0.853045, 1)
+material = SubResource("ShaderMaterial_slf4g")
+position = Vector2(83, 1)
+scale = Vector2(0.477753, 0.477923)
+texture = ExtResource("4_wsfvu")
+region_rect = Rect2(766, 63, 53, 53)
 
 [node name="bow" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(-0.603699, -0.597529)
-texture = ExtResource("3_ir48i")
+material = SubResource("ShaderMaterial_7sr7p")
+position = Vector2(0, 1)
+scale = Vector2(0.88578, 0.935219)
+texture = ExtResource("5_b02ej")
 region_enabled = true
-region_rect = Rect2(0, 95, 26, 26)
+region_rect = Rect2(160, 34, 16, 14)
 
 [node name="Label" type="Label" parent="bow"]
-offset_left = -1.65645
-offset_right = 35.3435
-offset_bottom = 23.0
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 2.2579
+offset_top = 9.62342
+offset_right = 39.2578
+offset_bottom = 32.6234
 scale = Vector2(-0.390529, -0.628225)
 
 [node name="fire" type="Sprite2D" parent="."]
-position = Vector2(40, -1.90735e-06)
+material = SubResource("ShaderMaterial_xpnm4")
+position = Vector2(28, 2.6822e-07)
 rotation = 0.545698
-scale = Vector2(0.270293, 0.283763)
-texture = ExtResource("4_ptt2x")
+scale = Vector2(0.899543, 0.775954)
+texture = ExtResource("6_6h8g6")
 region_enabled = true
-region_rect = Rect2(0, 0, 76, 62)
+region_rect = Rect2(32, -1, 16, 16)
 
 [node name="special1" type="Sprite2D" parent="."]
 modulate = Color(0.772549, 0, 0.780392, 1)
-position = Vector2(77, 2)
-scale = Vector2(0.385252, 0.383566)
-texture = ExtResource("4_ptt2x")
+material = SubResource("ShaderMaterial_3kct4")
+position = Vector2(56, 1)
+rotation = -1.42578
+scale = Vector2(0.943685, 0.840577)
+texture = ExtResource("6_6h8g6")
 region_enabled = true
-region_rect = Rect2(321, 260, 62, 60)
+region_rect = Rect2(111, 336, 18, 15)
 
 [node name="special2" type="Sprite2D" parent="."]
 modulate = Color(0, 0.921569, 0.34902, 1)
-position = Vector2(118, 1)
-scale = Vector2(0.309576, 0.29393)
-texture = ExtResource("4_ptt2x")
+material = SubResource("ShaderMaterial_lk84t")
+position = Vector2(83, 1)
+scale = Vector2(0.960805, 0.901271)
+texture = ExtResource("6_6h8g6")
 region_enabled = true
-region_rect = Rect2(263, 513, 53, 62)
+region_rect = Rect2(192, 352, 15, 16)
