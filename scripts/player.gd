@@ -145,11 +145,11 @@ func _physics_process(delta):
 			idlecanrun = false
 		else:
 			idlecanrun = true
-	if Input.is_action_just_pressed("run") and is_on_floor() and moveactive:
+	if Input.is_action_just_pressed("run") and is_on_floor() and moveactive and Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
 	
 		SPEED = 200
 		
-	if Input.is_action_just_released("run") and is_on_floor() and moveactive:
+	if Input.is_action_just_released("run") and is_on_floor() and moveactive and moveactive and Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
 		
 		SPEED = 100
 		

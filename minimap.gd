@@ -5,7 +5,8 @@ extends CanvasLayer
 @onready var sub_viewport = $SubViewportContainer/SubViewport
 var minimapplayer
 @onready var sub_viewport_container = $SubViewportContainer
-@onready var camera_2d = $Camera2D
+
+@onready var camera_2d = $SubViewportContainer/SubViewport/Camera2D
 
 func _ready():
 	sub_viewport_container.hide()
@@ -15,7 +16,7 @@ func _ready():
 	sub_viewport.add_child(minimapplayer)
 	
 func _process(delta):
-
+	camera_2d.position = player.position
 	minimapplayer.position = player.position
 	if Input.is_action_just_pressed("map"):
 		sub_viewport_container.show()
