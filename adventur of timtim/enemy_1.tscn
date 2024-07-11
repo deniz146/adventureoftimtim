@@ -1,6 +1,6 @@
 [gd_scene load_steps=70 format=3 uid="uid://bvu71fniamesm"]
 
-[ext_resource type="Script" path="res://enemy1.gd" id="1_ifwk6"]
+[ext_resource type="Script" path="res://scripts/enemy1.gd" id="1_ifwk6"]
 [ext_resource type="Shader" path="res://adventur of timtim/player.gdshader" id="2_nhdmn"]
 [ext_resource type="Texture2D" uid="uid://bflsurfglefe3" path="res://gm assets/Sprites/Attack1.png" id="3_hju5d"]
 [ext_resource type="Texture2D" uid="uid://dr0fi2tk7cel1" path="res://gm assets/Sprites/Attack2.png" id="4_slxcq"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbdiq8vsr0rp8"]
 
 [ext_resource type="Texture2D" uid="uid://dtqy3ihppcvrj" path="res://gm assets/GUI/Tileset_GUI.png" id="1_sgt7s"]
-[ext_resource type="Script" path="res://fragmentui.gd" id="2_c4b82"]
+[ext_resource type="Script" path="res://scripts/fragmentui.gd" id="2_c4b82"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="3_nabf8"]
 [ext_resource type="Texture2D" uid="uid://1g6lrnybce1h" path="res://gm assets/40 Random Items/GreenBalls.png" id="4_64k35"]
 

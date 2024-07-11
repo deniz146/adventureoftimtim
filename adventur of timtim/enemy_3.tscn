@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://c2rplpmhfhe8p"]
 
-[ext_resource type="Script" path="res://enemy_3.gd" id="1_xqrh2"]
+[ext_resource type="Script" path="res://scripts/enemy_3.gd" id="1_xqrh2"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_xsjjp"]
 [ext_resource type="Texture2D" uid="uid://dk0cwqa3cucrq" path="res://gm assets/Monsters_Creatures_Fantasy/Mushroom/Death.png" id="2_isdr7"]
 [ext_resource type="Texture2D" uid="uid://d037uog1qk6f" path="res://gm assets/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" id="3_3dy31"]

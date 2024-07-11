@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://buop1tux26ow"]
 
-[ext_resource type="Script" path="res://special1chest.gd" id="1_fx2ut"]
+[ext_resource type="Script" path="res://scripts/special1chest.gd" id="1_fx2ut"]
 [ext_resource type="Texture2D" uid="uid://c2gdv5mjsye35" path="res://adventur of timtim/—Pngtree—brush circle creative brush effect_60205152.png" id="2_6jmck"]
 [ext_resource type="Texture2D" uid="uid://dmr4csj1nyrmf" path="res://gm assets/RPG Icon Pack - 400+ Skills and Spells - Clockwork Raven Studios/icons64x64.png" id="4_64n4i"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="4_jwshj"]

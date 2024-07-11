@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2js8jhdertcw"]
 
-[ext_resource type="Script" path="res://minimap.gd" id="1_sbcpw"]
+[ext_resource type="Script" path="res://scripts/minimap.gd" id="1_sbcpw"]
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="2_dd46g"]
 [ext_resource type="Texture2D" uid="uid://c4afrh2rc5j0x" path="res://gm assets/UI assets pack 2/UI books & more.png" id="2_wb0nl"]
 
@@ -13,11 +13,11 @@ script = ExtResource("1_sbcpw")
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 z_index = 11
 custom_minimum_size = Vector2(250, 150)
-offset_left = 271.0
-offset_top = 117.0
-offset_right = 521.0
-offset_bottom = 267.0
-scale = Vector2(3.47384, 3.26929)
+offset_left = 738.0
+offset_top = 270.0
+offset_right = 988.0
+offset_bottom = 420.0
+scale = Vector2(3.83593, 3.6333)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 unique_name_in_owner = true
@@ -30,9 +30,9 @@ zoom = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_oip1o")
-position = Vector2(618, 360)
+position = Vector2(1127.16, 533.646)
 rotation = 1.5708
-scale = Vector2(13.5685, 13.38)
+scale = Vector2(15.2931, 16.6464)
 texture = ExtResource("2_wb0nl")
 region_enabled = true
 region_rect = Rect2(560, 16, 48, 64)

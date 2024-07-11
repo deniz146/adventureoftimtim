@@ -5761,12 +5761,12 @@ libraries = {
 layer = 5
 
 [node name="Sprite2D" parent="CanvasLayer" instance=ExtResource("8_knbda")]
-position = Vector2(863, 600)
-scale = Vector2(3.83672, 4.25239)
+position = Vector2(1365, 917)
+scale = Vector2(4.85849, 4.53249)
 
 [node name="Node2D" parent="CanvasLayer" instance=ExtResource("7_tdc27")]
-position = Vector2(60, 557)
-scale = Vector2(1.85783, 1.77771)
+position = Vector2(81, 849)
+scale = Vector2(2.55005, 2.661)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -3
@@ -5774,9 +5774,8 @@ layer = -3
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2"]
 z_index = -10
 material = SubResource("ShaderMaterial_xwjqr")
-position = Vector2(644, 370)
-rotation = -0.01171
-scale = Vector2(5.02127, 4.60736)
+position = Vector2(982, 570)
+scale = Vector2(7.382, 7.43491)
 skew = -0.00218379
 texture = ExtResource("24_civcb")
 
