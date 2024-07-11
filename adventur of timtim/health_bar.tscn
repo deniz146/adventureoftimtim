@@ -16,7 +16,7 @@ fill_mode = 3
 texture_under = ExtResource("4_wky5m")
 texture_progress = ExtResource("4_wky5m")
 tint_under = Color(0.584314, 0.584314, 0.584314, 1)
-tint_progress = Color(0.423529, 0, 0.0156863, 1)
+tint_progress = Color(0.156863, 0.188235, 0.407843, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="mana"]
 z_index = -1
