@@ -1,0 +1,156 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1gxjxogtfym2"]
+
+[ext_resource type="Script" path="res://scripts/main menu.gd" id="1_ek60k"]
+[ext_resource type="VideoStream" path="res://cutscenes/lv_0_20240711070720.ogv" id="2_ntywa"]
+[ext_resource type="FontFile" uid="uid://bia8caotvwmpj" path="res://fonts/apercumovistarbold.ttf" id="3_h8kkv"]
+
+[node name="main menu" type="Control"]
+custom_minimum_size = Vector2(0.1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1265.0
+offset_bottom = 723.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.998323, 1.00238)
+script = ExtResource("1_ek60k")
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -685.149
+offset_top = -361.141
+offset_right = 1874.85
+offset_bottom = 1078.86
+scale = Vector2(1.5478, 1.51832)
+stream = ExtResource("2_ntywa")
+autoplay = true
+expand = true
+loop = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(-0.005, 0)
+layout_mode = 1
+offset_left = -169.284
+offset_top = 701.331
+offset_right = -77.2843
+offset_bottom = 802.331
+scale = Vector2(5.08738, 2.27708)
+
+[node name="start game" type="Button" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../quit")
+text = " "
+
+[node name="options" type="Button" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 2
+text = "
+"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../start game")
+text = "
+"
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+texture_filter = 6
+layout_mode = 0
+offset_left = -172.289
+offset_top = 709.312
+offset_right = -81.2889
+offset_bottom = 732.312
+scale = Vector2(5.12675, 3.30469)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "START GAME"
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 2
+texture_filter = 6
+layout_mode = 0
+offset_left = -175.294
+offset_top = 697.34
+offset_right = -84.294
+offset_bottom = 720.34
+scale = Vector2(5.2058, 4.339)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "START GAME"
+
+[node name="Label2" type="Label" parent="."]
+z_index = 2
+texture_filter = 2
+layout_mode = 0
+offset_left = -173.291
+offset_top = 782.138
+offset_right = -108.291
+offset_bottom = 805.138
+scale = Vector2(4.93062, 3.60279)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "OPTİONS"
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 2
+texture_filter = 2
+layout_mode = 0
+offset_left = -177.297
+offset_top = 775.155
+offset_right = -112.297
+offset_bottom = 798.155
+scale = Vector2(4.99064, 4.35833)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "OPTİONS"
+
+[node name="Label3" type="Label" parent="."]
+z_index = 2
+texture_filter = 2
+layout_mode = 0
+offset_left = -165.277
+offset_top = 863.944
+offset_right = -125.277
+offset_bottom = 886.944
+scale = Vector2(4.76377, 2.96714)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "QUIT"
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 2
+texture_filter = 2
+layout_mode = 0
+offset_left = -171.287
+offset_top = 859.953
+offset_right = -131.287
+offset_bottom = 882.953
+scale = Vector2(4.97475, 3.39278)
+theme_override_fonts/font = ExtResource("3_h8kkv")
+text = "QUIT"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1281.15, 723.279)
+rotation = 3.14159
+scale = Vector2(61.1416, -14.5032)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="mouse_entered" from="VBoxContainer/start game" to="." method="_on_start_game_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/start game" to="." method="_on_start_game_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/start game" to="." method="_on_start_game_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

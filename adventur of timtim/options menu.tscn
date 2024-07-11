@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqhyr335gomkm"]
+[gd_scene load_steps=6 format=3 uid="uid://bqhyr335gomkm"]
 
 [ext_resource type="Script" path="res://adventur of timtim/options menu.gd" id="1_4nrpj"]
 [ext_resource type="VideoStream" path="res://cutscenes/lv_0_20240711091547.ogv" id="2_2d7kh"]
-[ext_resource type="Texture2D" uid="uid://cvy2xvuiavg7w" path="res://gm assets/UI assets pack 2/UI cooking.png" id="3_l1bsk"]
+[ext_resource type="FontFile" uid="uid://bia8caotvwmpj" path="res://fonts/apercumovistarbold.ttf" id="5_7kgev"]
+[ext_resource type="Script" path="res://adventur of timtim/windowmodebutton.gd" id="6_qqohu"]
+[ext_resource type="Script" path="res://adventur of timtim/resbutton.gd" id="7_v0v2y"]
 
 [node name="options" type="Control"]
 layout_mode = 3
@@ -14,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_4nrpj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 171.0
 offset_top = 502.0
@@ -21,16 +24,8 @@ offset_right = 211.0
 offset_bottom = 542.0
 scale = Vector2(7.12513, 6.54891)
 
-[node name="volume" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="graphics" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="back" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
 [node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+z_index = -1
 offset_left = -14.0
 offset_top = -4.99998
 offset_right = 2546.0
@@ -41,12 +36,169 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="volume" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 z_index = 1
-texture = ExtResource("3_l1bsk")
-region_enabled = true
-region_rect = Rect2(768, 16, 48, 47)
+layout_mode = 2
+offset_left = 171.0
+offset_top = 502.0
+offset_right = 211.0
+offset_bottom = 510.0
+scale = Vector2(5.31804, 6.66011)
 
-[connection signal="pressed" from="VBoxContainer/volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="VBoxContainer/graphics" to="." method="_on_graphics_pressed"]
-[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
+[node name="Label" type="Label" parent="volume"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1.79235
+offset_top = 0.307447
+offset_right = 47.7924
+offset_bottom = 23.3074
+scale = Vector2(0.673306, 0.380237)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "MUSIC"
+
+[node name="Label2" type="Label" parent="volume"]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 2.06843
+offset_top = -0.600592
+offset_right = 48.0684
+offset_bottom = 22.3994
+scale = Vector2(0.695863, 0.461169)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "MUSIC"
+
+[node name="graphics" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 2
+offset_left = 171.0
+offset_top = 576.0
+offset_right = 211.0
+offset_bottom = 584.0
+scale = Vector2(6.18526, 6.0453)
+
+[node name="Label3" type="Label" parent="graphics"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 0.80837
+offset_top = -0.59335
+offset_right = 76.8084
+offset_bottom = 22.4067
+scale = Vector2(0.456821, 0.487155)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "GRAPHICS"
+
+[node name="Label4" type="Label" parent="graphics"]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 0.646696
+offset_top = -0.758767
+offset_right = 76.6467
+offset_bottom = 22.2412
+scale = Vector2(0.470833, 0.511114)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "GRAPHICS"
+
+[node name="back" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 2
+offset_left = 177.0
+offset_top = 647.0
+offset_right = 217.0
+offset_bottom = 655.0
+scale = Vector2(3.86007, 6.24147)
+
+[node name="Label5" type="Label" parent="back"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1.30153
+offset_top = -0.3962
+offset_right = 42.3015
+offset_bottom = 22.6038
+scale = Vector2(0.869706, 0.38102)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "BACK"
+
+[node name="Label6" type="Label" parent="back"]
+visible = false
+self_modulate = Color(0.784314, 0.784314, 0.784314, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 1.03625
+offset_top = -0.160223
+offset_right = 42.0362
+offset_bottom = 22.8398
+scale = Vector2(0.891714, 0.406502)
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "BACK"
+
+[node name="windowmodebutton" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -206.0
+offset_top = 170.0
+offset_right = -166.0
+offset_bottom = 210.0
+scale = Vector2(1.12466, 1.06865)
+script = ExtResource("6_qqohu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="windowmodebutton"]
+layout_mode = 0
+offset_left = 623.261
+offset_top = 92.6018
+offset_right = 1373.26
+offset_bottom = 156.602
+scale = Vector2(2.35172, 1.74354)
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="windowmodebutton/HBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "WINDOW MODE               "
+
+[node name="OptionButton" type="OptionButton" parent="windowmodebutton/HBoxContainer"]
+custom_minimum_size = Vector2(80.775, 0)
+layout_mode = 2
+
+[node name="resbutton" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 42.0
+scale = Vector2(2.07284, 1.21583)
+script = ExtResource("7_v0v2y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="resbutton"]
+layout_mode = 0
+offset_left = 218.369
+offset_top = 374.834
+offset_right = 418.369
+offset_bottom = 414.834
+scale = Vector2(1.30784, 2.15692)
+
+[node name="Label" type="Label" parent="resbutton/HBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7kgev")
+text = "RESOLUTİON                                                         "
+
+[node name="OptionButton" type="OptionButton" parent="resbutton/HBoxContainer"]
+custom_minimum_size = Vector2(80.775, 0)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="volume" to="." method="_on_volume_mouse_entered"]
+[connection signal="mouse_exited" from="volume" to="." method="_on_volume_mouse_exited"]
+[connection signal="pressed" from="volume" to="." method="_on_volume_pressed"]
+[connection signal="mouse_entered" from="graphics" to="." method="_on_graphics_mouse_entered"]
+[connection signal="mouse_exited" from="graphics" to="." method="_on_graphics_mouse_exited"]
+[connection signal="pressed" from="graphics" to="." method="_on_graphics_pressed"]
+[connection signal="mouse_entered" from="back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="back" to="." method="_on_back_mouse_exited"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
