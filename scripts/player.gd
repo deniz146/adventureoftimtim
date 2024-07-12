@@ -8,6 +8,7 @@ var kickactive = true
 @onready var punchallow = $PUNCHALLOW
 @onready var k_ckallow = $"KİCKALLOW"
 @onready var _dead = $dead
+@onready var playeroptions = $playeroptions
 
 @onready var firedamage = $firedamage
 @onready var firecol = $firedamage/firecol
@@ -145,7 +146,7 @@ func _physics_process(delta):
 			idlecanrun = false
 		else:
 			idlecanrun = true
-	if Input.is_action_just_pressed("run") and is_on_floor() and moveactive and Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
+	if Input.is_action_just_pressed("run") and is_on_floor() and moveactive:
 	
 		SPEED = 200
 		
@@ -166,7 +167,6 @@ func move(delta):
 
 		
 		var direction = Input.get_axis("left", "right")
-		
 		
 		if direction:
 			velocity.x = SPEED * direction

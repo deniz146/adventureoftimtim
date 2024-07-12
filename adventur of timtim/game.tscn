@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bh8ktcr08xoy2"]
+[gd_scene load_steps=73 format=3 uid="uid://bh8ktcr08xoy2"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_1jf2r"]
 [ext_resource type="Texture2D" uid="uid://drats7hs8xma" path="res://gm assets/Tileset/Background_n_details.png" id="1_i4xee"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c2yakcga3xjc3" path="res://gm assets/GothicVania-town-files/PNG/environment/props-sliced/crate.png" id="18_albxn"]
 [ext_resource type="Texture2D" uid="uid://35f1unc7d1eh" path="res://gm assets/parallax_mountain_pack/layers/parallax-mountain-bg.png" id="24_civcb"]
 [ext_resource type="PackedScene" uid="uid://sv5xy1jju35s" path="res://adventur of timtim/savespot.tscn" id="31_6u38v"]
+[ext_resource type="PackedScene" uid="uid://21dnwu6pujs7" path="res://adventur of timtim/playeroptions.tscn" id="31_65ows"]
 [ext_resource type="PackedScene" uid="uid://c2rplpmhfhe8p" path="res://adventur of timtim/enemy_3.tscn" id="32_x1wid"]
 [ext_resource type="PackedScene" uid="uid://dl0pej2gavedv" path="res://adventur of timtim/firechest.tscn" id="33_jke8t"]
 [ext_resource type="PackedScene" uid="uid://cqhfhnkie4gcj" path="res://adventur of timtim/chests.tscn" id="33_mj13f"]
@@ -5767,6 +5768,8 @@ scale = Vector2(4.85849, 4.53249)
 [node name="Node2D" parent="CanvasLayer" instance=ExtResource("7_tdc27")]
 position = Vector2(81, 849)
 scale = Vector2(2.55005, 2.661)
+
+[node name="playeroptions" parent="CanvasLayer" instance=ExtResource("31_65ows")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -3

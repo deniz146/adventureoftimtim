@@ -8,26 +8,37 @@ extends Control
 @onready var label_6 = $back/Label6
 @onready var windowmodebutton = $windowmodebutton
 @onready var resbutton = $resbutton
+@onready var volume = $volume
+@onready var graphics = $graphics
+@onready var back = $back
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	volume.hide()
+	graphics.hide()
+	back.hide()
 	windowmodebutton.hide()
 	resbutton.hide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
-
+func  _process(delta):
+	if Input.is_action_just_pressed("map"):
+		volume.show()
+		graphics.show()
+		back.show()
 func _on_volume_pressed():
 	windowmodebutton.hide()
 	resbutton.hide()
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://adventur of timtim/main_menu.tscn")
-
-
+	volume.hide()
+	graphics.hide()
+	back.hide()
+	windowmodebutton.hide()
+	resbutton.hide()
 func _on_graphics_pressed():
 	
 	windowmodebutton.show()
