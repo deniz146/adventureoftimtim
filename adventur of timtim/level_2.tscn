@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ded0lgabg6py1"]
+[gd_scene load_steps=39 format=3 uid="uid://ded0lgabg6py1"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_l26f7"]
 [ext_resource type="PackedScene" uid="uid://cnwvwtbhoyxdx" path="res://adventur of timtim/platform.tscn" id="11_bivr3"]
@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://seciyaw03e78" path="res://gm assets/GothicVania-town-files/PNG/environment/props/houses.png" id="14_pj54q"]
 [ext_resource type="PackedScene" uid="uid://cqhfhnkie4gcj" path="res://adventur of timtim/chests.tscn" id="15_2y7ri"]
 [ext_resource type="PackedScene" uid="uid://bvu71fniamesm" path="res://adventur of timtim/enemy_1.tscn" id="16_g2brh"]
+[ext_resource type="PackedScene" uid="uid://mi3nijg65ard" path="res://adventur of timtim/enemy_2.tscn" id="17_bnmbn"]
+[ext_resource type="PackedScene" uid="uid://d12o2bqp6ukcw" path="res://adventur of timtim/platform_down.tscn" id="18_jtglx"]
 [ext_resource type="PackedScene" uid="uid://bnp4nxv65obwf" path="res://adventur of timtim/player.tscn" id="19_5nrhh"]
+[ext_resource type="PackedScene" uid="uid://sv5xy1jju35s" path="res://adventur of timtim/savespot.tscn" id="20_c7a60"]
 [ext_resource type="Script" path="res://adventur of timtim/rain.gd" id="20_uj4d1"]
 [ext_resource type="Script" path="res://adventur of timtim/dust.gd" id="21_8166x"]
 [ext_resource type="PackedScene" uid="uid://birdrsfh4buds" path="res://adventur of timtim/inventory.tscn" id="23_qsef4"]
@@ -1841,7 +1844,7 @@ root_node = NodePath("../player/Camera2D")
 libraries = {
 "": SubResource("AnimationLibrary_lksfd")
 }
-autoplay = "camera hit"
+autoplay = "PLATFORMUP2"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
@@ -1908,3 +1911,68 @@ position = Vector2(-2366, 1088)
 
 [node name="enemy4" parent="." instance=ExtResource("16_g2brh")]
 position = Vector2(946, 192)
+
+[node name="enemy_2" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(729, 586)
+
+[node name="enemy_3" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(18, 581)
+
+[node name="enemy_4" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(-1082, 1437)
+
+[node name="enemy_5" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(343, 1456)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1833, 1460)
+scale = Vector2(6.46261, 1.20081)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1664, 1423)
+scale = Vector2(7.97953, 1.29118)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1460, 1376)
+scale = Vector2(7.97953, 1.29118)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1912, 1128)
+scale = Vector2(4.92854, 1.91195)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1539, 1277)
+scale = Vector2(13.622, 1.62101)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1656, 1218)
+scale = Vector2(13.622, 1.62101)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1586, 1166)
+scale = Vector2(13.622, 1.62101)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("18_jtglx")]
+position = Vector2(-1683, 1325)
+scale = Vector2(13.622, 1.62101)
+
+[node name="savespot" parent="." instance=ExtResource("20_c7a60")]
+position = Vector2(415, 582)
+
+[node name="savespot2" parent="." instance=ExtResource("20_c7a60")]
+position = Vector2(2103, 1463)
+
+[node name="savespot3" parent="." instance=ExtResource("20_c7a60")]
+position = Vector2(-730, 1456)
+
+[node name="enemy_6" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(-1928, 1093)
+
+[node name="enemy_7" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(-1602, 1125)
+
+[node name="enemy_8" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(-1333, 1236)
+
+[node name="enemy_9" parent="." instance=ExtResource("17_bnmbn")]
+position = Vector2(-1721, 1375)
