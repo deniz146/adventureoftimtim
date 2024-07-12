@@ -23,11 +23,15 @@ func _ready():
 	resbutton.hide()
 
 
-func  _process(delta):
-	if Input.is_action_just_pressed("map"):
+func _process(delta):
+	if Input.is_action_just_pressed("menu"):
 		volume.show()
 		graphics.show()
 		back.show()
+		
+		
+		
+		
 func _on_volume_pressed():
 	windowmodebutton.hide()
 	resbutton.hide()

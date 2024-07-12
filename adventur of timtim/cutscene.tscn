@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2toswonjn2n6"]
+
+[ext_resource type="VideoStream" path="res://video/0001-0939.ogv" id="1_hkr25"]
+[ext_resource type="Script" path="res://adventur of timtim/cutscene.gd" id="2_qsorv"]
+
+[node name="cutscene" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_hkr25")
+autoplay = true
+script = ExtResource("2_qsorv")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 49.0
+offset_top = 985.0
+offset_right = 185.0
+offset_bottom = 1008.0
+scale = Vector2(2.58496, 3.14711)
+text = "press \"alt\" to skip"
+
+[connection signal="finished" from="." to="." method="_on_finished"]

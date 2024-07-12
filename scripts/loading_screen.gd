@@ -7,10 +7,11 @@ var scene_load_status = 0
 @onready var fire_1 = $fire1
 @onready var fire_2 = $fire2
 @onready var fire_3 = $fire3
-
+var scenepath : String
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sceneName = "res://adventur of timtim/game.tscn"
+	scenepath = Loader.scenepath
+	sceneName = scenepath
 	ResourceLoader.load_threaded_request(sceneName)
 
 

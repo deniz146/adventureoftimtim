@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://csjmv0tff2n8x"]
+
+[ext_resource type="Script" path="res://changelev.gd" id="1_cfmct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o483f"]
+size = Vector2(168, 141)
+
+[node name="changelevel" type="Area2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource("1_cfmct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(74, 60.5)
+shape = SubResource("RectangleShape2D_o483f")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

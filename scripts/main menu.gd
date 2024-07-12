@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _on_start_game_pressed():
-	get_tree().change_scene_to_file("res://adventur of timtim/loading_screen.tscn")
+	Loader.change_level("res://adventur of timtim/cutscene.tscn")
 
 
 func _on_options_pressed():
