@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bh8ktcr08xoy2"]
+[gd_scene load_steps=74 format=3 uid="uid://bh8ktcr08xoy2"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_1jf2r"]
 [ext_resource type="Texture2D" uid="uid://drats7hs8xma" path="res://gm assets/Tileset/Background_n_details.png" id="1_i4xee"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://sv5xy1jju35s" path="res://adventur of timtim/savespot.tscn" id="31_6u38v"]
 [ext_resource type="PackedScene" uid="uid://21dnwu6pujs7" path="res://adventur of timtim/playeroptions.tscn" id="31_65ows"]
 [ext_resource type="PackedScene" uid="uid://c2rplpmhfhe8p" path="res://adventur of timtim/enemy_3.tscn" id="32_x1wid"]
+[ext_resource type="PackedScene" uid="uid://mi3nijg65ard" path="res://adventur of timtim/enemy_2.tscn" id="34_sfxww"]
 [ext_resource type="PackedScene" uid="uid://b2js8jhdertcw" path="res://adventur of timtim/minimap.tscn" id="36_cbkhk"]
 [ext_resource type="PackedScene" uid="uid://csjmv0tff2n8x" path="res://adventur of timtim/changelev.tscn" id="37_yp36n"]
 
@@ -5885,3 +5886,6 @@ layer = 5
 
 [node name="playeroptions" parent="CanvasLayer3" instance=ExtResource("31_65ows")]
 visible = false
+
+[node name="enemy_2" parent="." instance=ExtResource("34_sfxww")]
+position = Vector2(172, -52)

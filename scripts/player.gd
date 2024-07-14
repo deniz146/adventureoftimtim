@@ -50,7 +50,7 @@ const GLOBAL = preload("res://adventur of timtim/global.tscn")
 @onready var special_2_col = $special2area/specia2col
 @onready var dodgestop = $dodgestop
 @onready var youdiedanim = $Camera2D/AnimationPlayer
-var havefire = false
+var havefire = true
 var havespecial2 = false
 var havespecial1 = false
 var havebow = false
@@ -86,9 +86,10 @@ var inputmanager = true
 var idlecanrun = true
 var bowdraw = false
 @onready var collision_shape_2d_2 = $"bullet kill/CollisionShape2D2"
-@onready var animation_player = $"../AnimationPlayer"
+
 @onready var savespot = $"../savespot"
 
+@onready var animation_player = $"../AnimationPlayer"
 
 
 func _ready():
@@ -150,7 +151,7 @@ func _physics_process(delta):
 	
 		SPEED = 200
 		
-	if Input.is_action_just_released("run") and is_on_floor() and moveactive and moveactive and Input.is_action_just_pressed("right") || Input.is_action_just_pressed("left"):
+	if Input.is_action_just_released("run") and is_on_floor() and moveactive:
 		
 		SPEED = 100
 		

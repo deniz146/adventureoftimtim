@@ -60,17 +60,12 @@ grow_vertical = 2
 scale = Vector2(1.24644, 1.25115)
 script = ExtResource("1_phadw")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 599.0
-offset_right = 1220.0
-offset_bottom = 1799.0
+offset_left = -64.1828
+offset_top = 668.985
+offset_right = 1135.82
+offset_bottom = 1868.98
 scale = Vector2(0.0878973, 0.0837441)
 fill_mode = 4
 texture_under = ExtResource("2_3tnua")
@@ -79,7 +74,7 @@ tint_under = Color(0, 0, 0, 1)
 
 [node name="fire1" type="GPUParticles2D" parent="."]
 z_index = 2
-position = Vector2(1238, 747)
+position = Vector2(1410.42, 851.217)
 rotation = -1.90795
 scale = Vector2(3.2147, 2.79512)
 emitting = false
@@ -88,7 +83,7 @@ process_material = SubResource("ParticleProcessMaterial_hkl7f")
 
 [node name="fire2" type="GPUParticles2D" parent="."]
 z_index = 1
-position = Vector2(1241, 740)
+position = Vector2(1408.81, 850.418)
 rotation = -2.10995
 scale = Vector2(3.04249, 2.5632)
 emitting = false
@@ -96,7 +91,7 @@ amount = 1000
 process_material = SubResource("ParticleProcessMaterial_k1q8x")
 
 [node name="fire3" type="GPUParticles2D" parent="."]
-position = Vector2(1237, 757)
+position = Vector2(1423.25, 856.812)
 rotation = -1.973
 scale = Vector2(1.65538, 1.55937)
 emitting = false
