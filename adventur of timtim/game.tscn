@@ -72,6 +72,57 @@ shader = ExtResource("1_1jf2r")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf8uj"]
 shader = ExtResource("1_1jf2r")
 
+[sub_resource type="Animation" id="Animation_j60rm"]
+resource_name = "PLATFORM UP"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%player/../platform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1344, 603), Vector2(1344, 235.56), Vector2(1344, 235.56), Vector2(1344, 603)]
+}
+
+[sub_resource type="Animation" id="Animation_scor2"]
+resource_name = "PLATFORMDOWN"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%player/../platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-415, 642), Vector2(-415, 1493.22), Vector2(-415, 1493.22), Vector2(-415, 642)]
+}
+
+[sub_resource type="Animation" id="Animation_554n6"]
+resource_name = "PLATFORMUP2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%player/../platform2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-351, 641), Vector2(-351, 230.485), Vector2(-351, 230.485), Vector2(-351, 641)]
+}
+
 [sub_resource type="Animation" id="Animation_3tsk1"]
 length = 0.001
 tracks/0/type = "value"
@@ -289,57 +340,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2v253"]
 resource_name = "new_animation"
-
-[sub_resource type="Animation" id="Animation_j60rm"]
-resource_name = "PLATFORM UP"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%player/../platform3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1344, 603), Vector2(1344, 235.56), Vector2(1344, 235.56), Vector2(1344, 603)]
-}
-
-[sub_resource type="Animation" id="Animation_554n6"]
-resource_name = "PLATFORMUP2"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%player/../platform2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-351, 641), Vector2(-351, 230.485), Vector2(-351, 230.485), Vector2(-351, 641)]
-}
-
-[sub_resource type="Animation" id="Animation_scor2"]
-resource_name = "PLATFORMDOWN"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%player/../platform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-415, 642), Vector2(-415, 1493.22), Vector2(-415, 1493.22), Vector2(-415, 642)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lksfd"]
 _data = {
@@ -5882,10 +5882,9 @@ layer_0/tile_data = PackedInt32Array(65538, 4, 9, 65539, 4, 9, 65540, 4, 9, 6554
 position = Vector2(1103, 637)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
-layer = 5
+layer = 8
 
 [node name="playeroptions" parent="CanvasLayer3" instance=ExtResource("31_65ows")]
-visible = false
 
 [node name="enemy_2" parent="." instance=ExtResource("34_sfxww")]
 position = Vector2(172, -52)

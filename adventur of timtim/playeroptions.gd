@@ -11,6 +11,9 @@ extends Control
 @onready var volume = $volume
 @onready var graphics = $graphics
 @onready var back = $back
+@onready var label_q = $QUIT/LabelQ
+@onready var label_q_1 = $QUIT/LabelQ1
+@onready var quit = $QUIT
 
 
 
@@ -21,14 +24,14 @@ func _ready():
 	back.hide()
 	windowmodebutton.hide()
 	resbutton.hide()
-
+	quit.hide()
 
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
 		volume.show()
 		graphics.show()
 		back.show()
-		
+		quit.show()
 		
 		
 		
@@ -43,6 +46,7 @@ func _on_back_pressed():
 	back.hide()
 	windowmodebutton.hide()
 	resbutton.hide()
+	quit.hide()
 func _on_graphics_pressed():
 	
 	windowmodebutton.show()
@@ -76,3 +80,17 @@ func _on_back_mouse_entered():
 func _on_back_mouse_exited():
 	label_6.hide()
 	label_5.show()
+
+
+func _on_quit_pressed():
+	Loader.change_level("res://adventur of timtim/main_menu.tscn")
+
+
+func _on_quit_mouse_entered():
+	label_q.hide()
+	label_q_1.show()
+
+
+func _on_quit_mouse_exited():
+	label_q.show()
+	label_q_1.hide()

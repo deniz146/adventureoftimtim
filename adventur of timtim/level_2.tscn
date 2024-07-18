@@ -1680,3 +1680,8 @@ position = Vector2(-1333, 1236)
 
 [node name="enemy_9" parent="." instance=ExtResource("17_bnmbn")]
 position = Vector2(-1721, 1375)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 8
+
+[node name="playeroptions" parent="CanvasLayer3" instance=ExtResource("25_i8qu8")]
