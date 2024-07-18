@@ -9,7 +9,6 @@ var kickactive = true
 @onready var k_ckallow = $"KİCKALLOW"
 @onready var _dead = $dead
 @onready var playeroptions = $playeroptions
-
 @onready var firedamage = $firedamage
 @onready var firecol = $firedamage/firecol
 var dead = false
@@ -90,6 +89,8 @@ var bowdraw = false
 @onready var savespot = $"../savespot"
 
 @onready var animation_player = $"../AnimationPlayer"
+
+@onready var camera_2d = $player/Camera2D2
 
 
 func _ready():

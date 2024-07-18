@@ -196,6 +196,7 @@ layout_mode = 2
 [node name="QUIT" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1
+layout_mode = 0
 offset_left = 176.0
 offset_top = 628.0
 offset_right = 216.0

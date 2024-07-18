@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ded0lgabg6py1"]
+[gd_scene load_steps=27 format=3 uid="uid://ded0lgabg6py1"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_l26f7"]
 [ext_resource type="PackedScene" uid="uid://cnwvwtbhoyxdx" path="res://adventur of timtim/platform.tscn" id="11_bivr3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://mi3nijg65ard" path="res://adventur of timtim/enemy_2.tscn" id="17_bnmbn"]
 [ext_resource type="PackedScene" uid="uid://d12o2bqp6ukcw" path="res://adventur of timtim/platform_down.tscn" id="18_jtglx"]
 [ext_resource type="PackedScene" uid="uid://bnp4nxv65obwf" path="res://adventur of timtim/player.tscn" id="19_5nrhh"]
+[ext_resource type="Texture2D" uid="uid://b0wjubg243eaj" path="res://gm assets/eyVjcs.png" id="20_afjav"]
 [ext_resource type="PackedScene" uid="uid://sv5xy1jju35s" path="res://adventur of timtim/savespot.tscn" id="20_c7a60"]
 [ext_resource type="Script" path="res://adventur of timtim/rain.gd" id="20_uj4d1"]
 [ext_resource type="Script" path="res://adventur of timtim/dust.gd" id="21_8166x"]
@@ -1515,6 +1516,9 @@ turbulence_initial_displacement_max = 32.4
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dbhop"]
 shader = ExtResource("1_l26f7")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5s2j"]
+shader = ExtResource("1_l26f7")
+
 [node name="level2" type="Node"]
 
 [node name="level2 tilemap" type="TileMap" parent="."]
@@ -1527,7 +1531,7 @@ unique_name_in_owner = true
 position = Vector2(381, -626)
 scale = Vector2(1.00252, 1.06565)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D2" type="Camera2D" parent="player"]
 position = Vector2(-16, 5)
 rotation = 3.14159
 scale = Vector2(0.87999, 0.759991)
@@ -1535,7 +1539,7 @@ offset = Vector2(10.69, -5.84)
 zoom = Vector2(2.72, 2.72)
 position_smoothing_enabled = true
 
-[node name="rain" type="GPUParticles2D" parent="player/Camera2D"]
+[node name="rain" type="GPUParticles2D" parent="player/Camera2D2"]
 position = Vector2(-69.1908, 147.34)
 rotation = -3.14159
 scale = Vector2(1.13352, 1.23474)
@@ -1544,7 +1548,7 @@ amount = 29
 process_material = SubResource("ParticleProcessMaterial_f8vrq")
 script = ExtResource("20_uj4d1")
 
-[node name="dust" type="GPUParticles2D" parent="player/Camera2D"]
+[node name="dust" type="GPUParticles2D" parent="player/Camera2D2"]
 position = Vector2(-275.491, -67.5064)
 rotation = 0.192859
 emitting = false
@@ -1685,3 +1689,14 @@ position = Vector2(-1721, 1375)
 layer = 8
 
 [node name="playeroptions" parent="CanvasLayer3" instance=ExtResource("25_i8qu8")]
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer4"]
+z_index = -10
+material = SubResource("ShaderMaterial_m5s2j")
+position = Vector2(982, 570)
+scale = Vector2(1.18149, 1.17935)
+skew = -0.00218379
+texture = ExtResource("20_afjav")
