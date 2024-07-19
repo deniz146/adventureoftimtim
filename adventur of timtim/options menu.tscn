@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqhyr335gomkm"]
+[gd_scene load_steps=10 format=3 uid="uid://bqhyr335gomkm"]
 
 [ext_resource type="Script" path="res://adventur of timtim/options menu.gd" id="1_4nrpj"]
 [ext_resource type="VideoStream" path="res://cutscenes/lv_0_20240711091547.ogv" id="2_2d7kh"]
 [ext_resource type="FontFile" uid="uid://bia8caotvwmpj" path="res://fonts/apercumovistarbold.ttf" id="5_7kgev"]
 [ext_resource type="Script" path="res://adventur of timtim/windowmodebutton.gd" id="6_qqohu"]
+[ext_resource type="AudioStream" uid="uid://dgpj2bflal4yj" path="res://sound/echo-105584.wav" id="6_ysdx3"]
+[ext_resource type="AudioStream" uid="uid://c1r04sa1ajj8w" path="res://sound/click-with-big-reverb-28848.wav" id="7_m1jk3"]
 [ext_resource type="Script" path="res://adventur of timtim/resbutton.gd" id="7_v0v2y"]
+[ext_resource type="AudioStream" uid="uid://cld56qw6va63v" path="res://sound/crackling-fire-14759.wav" id="8_7gpip"]
+[ext_resource type="AudioStream" uid="uid://def2vl2dyblhb" path="res://sound/ocean-sea-soft-waves-121349.wav" id="9_ftf5o"]
 
 [node name="options" type="Control"]
 layout_mode = 3
@@ -193,6 +197,22 @@ text = "RESOLUTİON                                                         "
 [node name="OptionButton" type="OptionButton" parent="resbutton/HBoxContainer"]
 custom_minimum_size = Vector2(80.775, 0)
 layout_mode = 2
+
+[node name="echo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ysdx3")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_m1jk3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_7gpip")
+volume_db = 10.51
+autoplay = true
+bus = &"fire"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ftf5o")
+autoplay = true
 
 [connection signal="mouse_entered" from="volume" to="." method="_on_volume_mouse_entered"]
 [connection signal="mouse_exited" from="volume" to="." method="_on_volume_mouse_exited"]

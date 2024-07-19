@@ -8,6 +8,8 @@ extends Control
 @onready var label_6 = $back/Label6
 @onready var windowmodebutton = $windowmodebutton
 @onready var resbutton = $resbutton
+@onready var echo = $echo
+@onready var click = $click
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,21 +24,21 @@ func _process(delta):
 func _on_volume_pressed():
 	windowmodebutton.hide()
 	resbutton.hide()
-
+	click.play()
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://adventur of timtim/main_menu.tscn")
-
+	click.play()
 
 func _on_graphics_pressed():
 	
 	windowmodebutton.show()
 	resbutton.show()
-
+	click.play()
 func _on_volume_mouse_entered():
 	label.hide()
 	label_2.show()
-
+	echo.play()
 
 func _on_volume_mouse_exited():
 	label_2.hide()
@@ -46,7 +48,7 @@ func _on_volume_mouse_exited():
 func _on_graphics_mouse_entered():
 	label_3.hide()
 	label_4.show()
-
+	echo.play()
 
 func _on_graphics_mouse_exited():
 	label_4.hide()
@@ -56,7 +58,7 @@ func _on_graphics_mouse_exited():
 func _on_back_mouse_entered():
 	label_5.hide()
 	label_6.show()
-
+	echo.play()
 
 func _on_back_mouse_exited():
 	label_6.hide()

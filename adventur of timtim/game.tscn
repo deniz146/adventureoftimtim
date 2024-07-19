@@ -5847,7 +5847,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
+layer = 128
 
 [node name="Sprite2D" parent="CanvasLayer" instance=ExtResource("8_knbda")]
 position = Vector2(1365, 917)
@@ -5875,6 +5875,7 @@ position = Vector2(686, -35)
 position = Vector2(2440, -39)
 
 [node name="minimap" parent="." node_paths=PackedStringArray("player", "tilemap") instance=ExtResource("36_cbkhk")]
+layer = 128
 player = NodePath("../player")
 tilemap = NodePath("../TileMap")
 
@@ -5901,7 +5902,7 @@ position = Vector2(4093, 917)
 scale = Vector2(4.67096, 2.50916)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
-layer = 37
+layer = 128
 
 [node name="playeroptions" parent="CanvasLayer3" instance=ExtResource("31_65ows")]
 
@@ -6061,7 +6062,10 @@ offset_bottom = -45.0
 scale = Vector2(63.3457, 32.5748)
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1.02558, 2.40333)
+position = Vector2(-151, -2)
+scale = Vector2(1.05725, 1.88827)
+collision_layer = 1025
+collision_mask = 1025
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 self_modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)

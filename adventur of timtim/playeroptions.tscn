@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://21dnwu6pujs7"]
+[gd_scene load_steps=7 format=3 uid="uid://21dnwu6pujs7"]
 
 [ext_resource type="Script" path="res://adventur of timtim/playeroptions.gd" id="1_jjg05"]
 [ext_resource type="FontFile" uid="uid://bia8caotvwmpj" path="res://fonts/apercumovistarbold.ttf" id="2_1ytyg"]
 [ext_resource type="Script" path="res://adventur of timtim/windowmodebutton.gd" id="3_ccbuo"]
 [ext_resource type="Script" path="res://adventur of timtim/resbutton.gd" id="4_ymdpx"]
+[ext_resource type="AudioStream" uid="uid://dgpj2bflal4yj" path="res://sound/echo-105584.wav" id="5_exwiw"]
+[ext_resource type="AudioStream" uid="uid://c1r04sa1ajj8w" path="res://sound/click-with-big-reverb-28848.wav" id="6_4n1gg"]
 
 [node name="playeroptions" type="Control"]
 layout_mode = 3
@@ -228,6 +230,12 @@ offset_bottom = 22.8398
 scale = Vector2(0.891714, 0.406502)
 theme_override_fonts/font = ExtResource("2_1ytyg")
 text = "QUIT"
+
+[node name="echo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_exwiw")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4n1gg")
 
 [connection signal="mouse_entered" from="volume" to="." method="_on_volume_mouse_entered"]
 [connection signal="mouse_exited" from="volume" to="." method="_on_volume_mouse_exited"]
