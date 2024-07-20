@@ -17,11 +17,11 @@ var right = false
 @onready var kickcol = $kickcol/CollisionShape2D
 @onready var punchcol = $punchcol/CollisionShape2D
 @onready var shop = $"../shop"
-
+var animactive = true
 @onready var bulletspawn = $bulletspawn
 var action_to_check = ["left", "right", "jump", "magic", "shoot", "punch", "kick"]
 var keys_to_check = [KEY_A, KEY_D, KEY_SPACE, KEY_Q, KEY_E, KEY_Z, KEY_C, KEY_SHIFT, KEY_CTRL]
-
+var stopbow = true
 var punchactive = true
 @onready var punchover = $punchover
 @onready var punchcombo = $punchcombo
@@ -135,9 +135,14 @@ func _physics_process(delta):
 	animation()
 	_special1(delta)
 	_special2(delta)
-
+	if health > 100:
+		health = 100
 	if health < 0:
 		health = 0
+	if mana < 0:
+		mana = 0
+	if mana > 100:
+		mana = 100
 	if inputmanager:
 		is_key_pressed = false
 		for key in keys_to_check:
@@ -240,53 +245,44 @@ func move(delta):
 		
 
 func animation():
-
-	var direction = Input.get_axis("left", "right")
-	if is_on_floor() and idlecanrun == true:
-		animator.play("idle")
-	if direction < 0 and is_on_floor() and moveactive and SPEED ==100:
-		animator.play("walk")
-	if direction > 0 and is_on_floor() and moveactive and SPEED ==100:
-		animator.play("walk")
-
-		
-	if direction < 0 and is_on_floor() and moveactive and SPEED ==200:
-		animator.play("run")
-	if direction > 0 and is_on_floor() and moveactive and SPEED ==200:
-		animator.play("run")
+	if animactive:
+		var direction = Input.get_axis("left", "right")
+		if is_on_floor() and idlecanrun == true:
+			animator.play("idle")
+		if direction < 0 and is_on_floor() and moveactive and SPEED ==100:
+			animator.play("walk")
+		if direction > 0 and is_on_floor() and moveactive and SPEED ==100:
+				animator.play("walk")
 
 		
-	if Input.is_action_just_pressed("jump") and jumpactive:
-		animator.play("jump_start")
-	if Input.is_action_just_pressed("kick") and kickactive:
-		inputmanager = false
-		idlecanrun = false
-		animator.play("kick")
-		punchnkick.play("kickcol")
-	if Input.is_action_just_pressed("punch") and punchactive:
-		inputmanager = false
-		idlecanrun = false
-		animator.play("attack")
-		punchnkick.play("punchcol")
-	if Input.is_action_just_pressed("magic") and magic_active and havefire:
-		animator.play("fire")
-	if Input.is_action_just_pressed("shoot") and shootactive and havebow:
-		animator.play("draw")
-	if Input.is_action_just_released("shoot"):
-		animator.play("shoot")
-	if Input.is_action_just_pressed("special1") and magic_active and havespecial1:
-		animator.play("fire")
-	if Input.is_action_just_pressed("special2") and magic_active and havespecial2:
-		animator.play("fire")
-	if dead:
-		animator.play("death")
+		if direction < 0 and is_on_floor() and moveactive and SPEED ==200:
+			animator.play("run")
+		if direction > 0 and is_on_floor() and moveactive and SPEED ==200:
+			animator.play("run")
+
+		
+		if Input.is_action_just_pressed("jump") and jumpactive:
+			animator.play("jump_start")
+
+		if Input.is_action_just_pressed("magic") and magic_active and havefire:
+			animator.play("fire")
+		if Input.is_action_just_pressed("shoot") and shootactive and havebow and bullet_count > 0:
+			animator.play("draw")
+		if Input.is_action_just_released("shoot") and bullet_count > 0:
+			animator.play("shoot")
+		if Input.is_action_just_pressed("special1") and magic_active and havespecial1:
+			animator.play("fire")
+		if Input.is_action_just_pressed("special2") and magic_active and havespecial2:
+			animator.play("fire")
+		if dead:
+			animator.play("death")
 
 
 
 func shoot():
 	if shootactive and havebow:
 		var direction = animator.flip_h
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") and stopbow and bullet_count > 0:
 			kickactive = false
 			punchactive = false
 			magic_active = false
@@ -295,7 +291,7 @@ func shoot():
 			dodgeactive = false
 			bowdraw = true
 			canshoot.start()
-		if Input.is_action_just_released("shoot") and canshoot.is_stopped():
+		if Input.is_action_just_released("shoot") and canshoot.is_stopped() and bullet_count > 0:
 			collision_shape_2d_2.disabled = false
 			inputmanager = false
 			idlecanrun = false
@@ -318,13 +314,17 @@ func shoot():
 			stop_anim.start()
 			bowdraw = false
 		
-	if bullet_count == 0:
+	if bullet_count <= 0:
+		bullet_count = 0
+		stopbow = false
 		if Input.is_action_just_pressed("shoot") and canshoot.is_stopped():
-
+		
 			havebullet = false
 			shootactive = false
-		
-	
+	else:
+		stopbow = true
+		havebullet = true
+		shootactive = true
 
 func magic(delta):
 	if magic_active and havefire:
@@ -444,38 +444,50 @@ func _special2(delta):
 
 			
 func punch():
-	if punchactive:
 
-		if Input.is_action_just_pressed("punch") and punchallow.is_stopped():
-			velocity.x = 0.1
-			moveactive = false
-			magic_active = false
-			dodgeactive = false
-			inputmanager = false
-			shootactive = false 
-			jumpactive = false
-			kickactive = false
-			idlecanrun = false
-
-			punchover.start()
-			punchallow.start()
+	if Input.is_action_just_pressed("punch") and is_on_floor():
+		animactive = false
+		velocity.x = 0.1
+		moveactive = false
+		magic_active = false
+		dodgeactive = false
+		inputmanager = false
+		shootactive = false 
+		jumpactive = false
+		kickactive = false
+		
+		fire_magic.emitting = false
+		special_1.emitting = false
+		special_2.emitting = false
+		animator.play("attack")
+		punchnkick.play("punchcol")
+		punchover.start()
+		punchallow.start()
 		
 func kick():
-	if kickactive:
-		if Input.is_action_just_pressed("kick") and k_ckallow.is_stopped():
-			velocity.x = 0.1
-			moveactive = false
-			magic_active = false
-			shootactive = false 
-			dodgeactive = false
-			inputmanager = false
-			jumpactive = false
-			punchactive = false
-			idlecanrun = false
+	if Input.is_action_just_pressed("kick") and is_on_floor():
+		animactive = false
+		velocity.x = 0.1
+		moveactive = false
+		magic_active = false
+		shootactive = false 
+		dodgeactive = false
+		inputmanager = false
+		jumpactive = false
+		punchactive = false
+		
+	
+		fire_magic.emitting = false
+		special_1.emitting = false
+		special_2.emitting = false
+
+		animator.play("kick")
+		punchnkick.play("kickcol")
 	
 
-			kickover.start()
-			k_ckallow.start()
+
+		kickover.start()
+		k_ckallow.start()
 		
 	
 func _punchcombo():
@@ -539,7 +551,7 @@ func _on_firetime_timeout():
 
 
 func _on_punchover_timeout():
-
+	animactive = true
 	moveactive = true
 	magic_active = true
 	shootactive = true 
@@ -547,7 +559,7 @@ func _on_punchover_timeout():
 	dodgeactive = true
 	kickactive = true
 	jumpactive = true
-	idlecanrun = true
+	
 
 
 func _on_punchcombo_timeout():
@@ -555,7 +567,7 @@ func _on_punchcombo_timeout():
 
 
 func _on_kickover_timeout():
-
+	animactive = true
 	moveactive = true
 	magic_active = true
 	dodgeactive = true
@@ -563,7 +575,7 @@ func _on_kickover_timeout():
 	inputmanager = true
 	punchactive = true
 	jumpactive = true
-	idlecanrun = true
+	
 
 
 

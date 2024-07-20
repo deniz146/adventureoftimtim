@@ -792,8 +792,10 @@ shape = SubResource("RectangleShape2D_gpjur")
 one_shot = true
 
 [node name="PUNCHALLOW" type="Timer" parent="."]
+autostart = true
 
 [node name="KİCKALLOW" type="Timer" parent="."]
+autostart = true
 
 [node name="dead" type="Timer" parent="."]
 
