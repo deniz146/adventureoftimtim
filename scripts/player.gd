@@ -50,9 +50,9 @@ const GLOBAL = preload("res://adventur of timtim/global.tscn")
 @onready var dodgestop = $dodgestop
 @onready var youdiedanim = $Camera2D/AnimationPlayer
 var havefire = true
-var havespecial2 = false
-var havespecial1 = false
-var havebow = false
+var havespecial2 = true
+var havespecial1 = true
+var havebow = true
 
 
 var inmove 
@@ -60,7 +60,7 @@ var speedrun = 500
 
 @onready var fire_magic = $"fire magic"
 @onready var firetime = $firetime
-var decrease_rate := 0.1
+var decrease_rate := 0
 var bull
 var fire
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -312,7 +312,7 @@ func shoot():
 			bull.init(direction)
 			get_parent().add_child(bull)
 			bull.global_position = marker_2d.global_position
-			animation_player.play("camera bullet shake")
+
 			bullet_count -= 1
 			
 			stop_anim.start()
@@ -320,7 +320,7 @@ func shoot():
 		
 	if bullet_count == 0:
 		if Input.is_action_just_pressed("shoot") and canshoot.is_stopped():
-			animation_player.play("bullet over")
+
 			havebullet = false
 			shootactive = false
 		
@@ -343,13 +343,13 @@ func magic(delta):
 			fire.emitting = true
 			get_tree().current_scene.add_child(fire)
 			fire.global_position = marker_2d.global_position
-			animation_player.play("fire")
+
 			stop_anim.start()
 		if Input.is_action_just_released("magic"):
 			fires = false
 			firedamage = false
 			fire.emitting = false
-			animation_player.play("donthavefire")
+
 			jumpactive = true
 			punchactive = true
 			kickactive = true
@@ -382,13 +382,13 @@ func _special1(delta):
 			special_1.emitting = true
 			get_tree().current_scene.add_child(special_1)
 			special_1.global_position = marker_2d.global_position
-			animation_player.play("fire")
+
 			stop_anim.start()
 		if Input.is_action_just_released("special1"):
 			fires = false
 			firedamage = false
 			special_1.emitting = false
-			animation_player.play("donthavefire")
+
 			jumpactive = true
 			punchactive = true
 			dodgeactive = true
@@ -420,13 +420,13 @@ func _special2(delta):
 			special_2.emitting = true
 			get_tree().current_scene.add_child(special_2)
 			special_2.global_position = marker_2d.global_position
-			animation_player.play("fire")
+
 			stop_anim.start()
 		if Input.is_action_just_released("special2"):
 			fires = false
 			firedamage = false
 			special_2.emitting = false
-			animation_player.play("donthavefire")
+
 			jumpactive = true
 			punchactive = true
 			kickactive = true

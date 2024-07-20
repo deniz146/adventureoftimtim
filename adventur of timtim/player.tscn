@@ -598,9 +598,7 @@ shape = SubResource("CapsuleShape2D_nxrhh")
 z_index = 5
 material = SubResource("ShaderMaterial_b1weq")
 sprite_frames = SubResource("SpriteFrames_0pina")
-animation = &"death"
-frame = 6
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.5
