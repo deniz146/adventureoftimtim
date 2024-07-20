@@ -53,6 +53,9 @@ var havefire = true
 var havespecial2 = true
 var havespecial1 = true
 var havebow = true
+@onready var run = $run
+@onready var walk = $walk
+@onready var run_metal = $"run metal"
 
 
 var inmove 
@@ -60,7 +63,7 @@ var speedrun = 500
 
 @onready var fire_magic = $"fire magic"
 @onready var firetime = $firetime
-var decrease_rate := 0
+var decrease_rate := 0.1
 var bull
 var fire
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -85,6 +88,7 @@ var inputmanager = true
 var idlecanrun = true
 var bowdraw = false
 @onready var collision_shape_2d_2 = $"bullet kill/CollisionShape2D2"
+@onready var firesound = $fire
 
 @onready var savespot = $"../savespot"
 
@@ -111,6 +115,7 @@ func _ready():
 	k_ckallow.start()
 	punchallow.start()
 func _physics_process(delta):
+	print(inputmanager)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		kickactive = false
@@ -135,6 +140,7 @@ func _physics_process(delta):
 	animation()
 	_special1(delta)
 	_special2(delta)
+	sound()
 	if health > 100:
 		health = 100
 	if health < 0:
@@ -243,7 +249,30 @@ func move(delta):
 	
 
 		
-
+func sound():
+	#if Input.is_action_just_pressed("left") and SPEED == 100:
+		#walk.play()
+	#if Input.is_action_just_pressed("right") and SPEED == 100:
+		#walk.play()
+	#if Input.is_action_just_released("left"):
+		#walk.stop()
+		#run.stop()
+		#run_metal.stop()
+	#if Input.is_action_just_released("right"):
+	#	walk.stop()
+	#if Input.is_action_just_pressed("left") and SPEED == 200:
+		#run.play()
+		#run_metal.play()
+	#if Input.is_action_just_pressed("right")and SPEED == 200:
+		#run.play()
+		#run_metal.play()
+	if Input.is_action_just_pressed("magic") and magic_active:
+		firesound.play()
+	if mana == 0:
+		firesound.stop()
+	if Input.is_action_just_released("magic"):
+		firesound.stop()
+		
 func animation():
 	if animactive:
 		var direction = Input.get_axis("left", "right")
@@ -251,6 +280,7 @@ func animation():
 			animator.play("idle")
 		if direction < 0 and is_on_floor() and moveactive and SPEED ==100:
 			animator.play("walk")
+			
 		if direction > 0 and is_on_floor() and moveactive and SPEED ==100:
 				animator.play("walk")
 
@@ -559,8 +589,8 @@ func _on_punchover_timeout():
 	dodgeactive = true
 	kickactive = true
 	jumpactive = true
-	
-
+	idlecanrun = true
+	punchactive = false
 
 func _on_punchcombo_timeout():
 	punchcombovar = 0
@@ -575,7 +605,7 @@ func _on_kickover_timeout():
 	inputmanager = true
 	punchactive = true
 	jumpactive = true
-	
+	kickactive = false
 
 
 
