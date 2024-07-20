@@ -57,13 +57,15 @@ var havebow = true
 @onready var walk = $walk
 @onready var run_metal = $"run metal"
 
+@onready var bowload = $bowload
+@onready var bowsend = $bowsend
 
 var inmove 
 var speedrun = 500
 
 @onready var fire_magic = $"fire magic"
 @onready var firetime = $firetime
-var decrease_rate := 0.1
+var decrease_rate := 0
 var bull
 var fire
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -96,7 +98,7 @@ var bowdraw = false
 
 @onready var camera_2d = $player/Camera2D2
 
-
+var soundactive = true
 func _ready():
 
 	special_1_col.disabled = true
@@ -166,7 +168,7 @@ func _physics_process(delta):
 	if Input.is_action_just_released("run") and is_on_floor() and moveactive:
 		
 		SPEED = 100
-		
+
 func jump():
 	if jumpactive:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -250,29 +252,29 @@ func move(delta):
 
 		
 func sound():
-	#if Input.is_action_just_pressed("left") and SPEED == 100:
-		#walk.play()
-	#if Input.is_action_just_pressed("right") and SPEED == 100:
-		#walk.play()
-	#if Input.is_action_just_released("left"):
-		#walk.stop()
-		#run.stop()
-		#run_metal.stop()
-	#if Input.is_action_just_released("right"):
-	#	walk.stop()
-	#if Input.is_action_just_pressed("left") and SPEED == 200:
-		#run.play()
-		#run_metal.play()
-	#if Input.is_action_just_pressed("right")and SPEED == 200:
-		#run.play()
-		#run_metal.play()
-	if Input.is_action_just_pressed("magic") and magic_active:
-		firesound.play()
-	if mana == 0:
-		firesound.stop()
-	if Input.is_action_just_released("magic"):
-		firesound.stop()
-		
+	if soundactive:
+
+
+
+
+		if Input.is_action_just_pressed("magic") and magic_active and havefire:
+			firesound.play()
+		if Input.is_action_just_pressed("shoot") and shootactive and havebow and bullet_count > 0:
+			bowload.play()
+		if Input.is_action_just_released("shoot") and bullet_count > 0:
+			bowsend.play()
+		if Input.is_action_just_pressed("special1") and magic_active and havespecial1:
+			firesound.play()
+		if Input.is_action_just_pressed("special2") and magic_active and havespecial2:
+			firesound.play()
+
+		if Input.is_action_just_released("magic"):
+			firesound.stop()
+			
+		if Input.is_action_just_released("special1"):
+			firesound.stop()
+		if Input.is_action_just_released("special2"):
+			firesound.stop()
 func animation():
 	if animactive:
 		var direction = Input.get_axis("left", "right")
@@ -585,7 +587,7 @@ func _on_punchover_timeout():
 	moveactive = true
 	
 	inputmanager = true
-
+	jumpactive = true
 func _on_punchcombo_timeout():
 	punchcombovar = 0
 
@@ -593,7 +595,7 @@ func _on_punchcombo_timeout():
 func _on_kickover_timeout():
 	animactive = true
 	moveactive = true
-	
+	jumpactive = true
 	inputmanager = true
 
 

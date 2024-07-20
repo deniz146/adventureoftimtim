@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var player = %player
 @onready var label = $Label
 @onready var arrowhitstop = $arrowhitstop
+@onready var choosestrike = $choosestrike
 
 var health = 100
 var playerdetectentered
@@ -29,7 +30,7 @@ var inattack = false
 @onready var attack_1_col = $attack1col
 @onready var attack_2_col = $attack2col
 @onready var animation_player = $AnimationPlayer
-var random = [1, 2].pick_random()
+var random 
 @onready var attackover = $attackover
 var attack1 = false
 var attack2 = false
@@ -368,3 +369,9 @@ func _on_dying_timeout():
 
 func _on_arrowhitstop_timeout():
 	ingethit = false
+
+func choose(array):
+	array.shuffle()
+	return array.front()
+func _on_choosestrike_timeout():
+	random = choose([1, 2])

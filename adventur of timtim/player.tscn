@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bnp4nxv65obwf"]
+[gd_scene load_steps=104 format=3 uid="uid://bnp4nxv65obwf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xps3h"]
 [ext_resource type="Shader" path="res://adventur of timtim/player.gdshader" id="2_0y575"]
@@ -63,10 +63,13 @@
 [ext_resource type="Texture2D" uid="uid://crfowflcbr0m7" path="res://gm assets/Individual Sprites (2)/adventurer-walk-03.png" id="59_o4ecu"]
 [ext_resource type="Texture2D" uid="uid://bqsccn37vffj2" path="res://gm assets/Individual Sprites (2)/adventurer-walk-04.png" id="60_k1kj5"]
 [ext_resource type="Texture2D" uid="uid://dbmvyllk5l0w3" path="res://gm assets/Individual Sprites (2)/adventurer-walk-05.png" id="61_x4c7a"]
-[ext_resource type="AudioStream" uid="uid://cq7bslumaadhj" path="res://sound/running-sounds-6003.wav" id="64_ciqub"]
-[ext_resource type="AudioStream" uid="uid://rlp36h5nsq40" path="res://sound/walking-soundscape-200112.wav" id="65_u5c4e"]
+[ext_resource type="AudioStream" uid="uid://deo1mjqfcnmta" path="res://sound/mixkit-running-through-the-forest-1232 (1).wav" id="64_mvfd4"]
+[ext_resource type="AudioStream" uid="uid://ct5sxsqh6a2y5" path="res://sound/mixkit-crunchy-road-fast-walking-loop-1274 (1).wav" id="65_vo2yg"]
 [ext_resource type="AudioStream" uid="uid://cp44gp06ka8o5" path="res://sound/metal-chain-7056.wav" id="66_s62ml"]
 [ext_resource type="AudioStream" uid="uid://r6jxg7nghel0" path="res://sound/designed-fire-winds-swoosh-04-116788.wav" id="67_y1bwy"]
+[ext_resource type="AudioStream" uid="uid://cj66coholmxpm" path="res://sound/bow-loading-38752.wav" id="68_16suc"]
+[ext_resource type="AudioStream" uid="uid://bxjlufoygbbfb" path="res://sound/bow-release-bow-and-arrow-4-101936.wav" id="69_hicib"]
+[ext_resource type="AudioStream" uid="uid://brb1jdwkkhyhv" path="res://sound/dark-fireball-attack-spell-swoosh-3-SBA-300419492-preview (1).wav" id="70_hip20"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxrhh"]
 radius = 5.0
@@ -876,16 +879,29 @@ zoom = Vector2(4.17, 4.17)
 occluder = SubResource("OccluderPolygon2D_xfmih")
 
 [node name="run" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("64_ciqub")
+stream = ExtResource("64_mvfd4")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("65_u5c4e")
+stream = ExtResource("65_vo2yg")
 
 [node name="run metal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("66_s62ml")
 
 [node name="fire" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("67_y1bwy")
+
+[node name="bowload" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("68_16suc")
+
+[node name="bowsend" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("69_hicib")
+
+[node name="special1sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("70_hip20")
+
+[node name="special2sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="stop anim" to="." method="_on_stop_anim_timeout"]
 [connection signal="timeout" from="player death" to="." method="_on_player_death_timeout"]

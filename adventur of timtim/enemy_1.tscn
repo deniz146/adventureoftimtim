@@ -613,6 +613,10 @@ offset_bottom = -31.0
 [node name="arrowhitstop" type="Timer" parent="."]
 wait_time = 0.581
 
+[node name="choosestrike" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
 [connection signal="area_shape_entered" from="leftsight/leftsidearea" to="." method="_on_leftsidearea_area_shape_entered"]
 [connection signal="area_shape_exited" from="leftsight/leftsidearea" to="." method="_on_leftsidearea_area_shape_exited"]
 [connection signal="area_shape_entered" from="rightsight/rightsidearea" to="." method="_on_rightsidearea_area_shape_entered"]
@@ -632,3 +636,4 @@ wait_time = 0.581
 [connection signal="timeout" from="gethit" to="." method="_on_gethit_timeout"]
 [connection signal="timeout" from="dying" to="." method="_on_dying_timeout"]
 [connection signal="timeout" from="arrowhitstop" to="." method="_on_arrowhitstop_timeout"]
+[connection signal="timeout" from="choosestrike" to="." method="_on_choosestrike_timeout"]
