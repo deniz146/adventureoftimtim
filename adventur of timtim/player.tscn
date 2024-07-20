@@ -691,7 +691,6 @@ wait_time = 0.1
 
 [node name="punchover" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.839
 
 [node name="punchcombo" type="Timer" parent="."]
 wait_time = 0.3
@@ -702,7 +701,6 @@ one_shot = true
 
 [node name="kickover" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.839
 
 [node name="punchnkick" type="AnimationPlayer" parent="."]
 libraries = {

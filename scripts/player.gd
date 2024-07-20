@@ -115,7 +115,7 @@ func _ready():
 	k_ckallow.start()
 	punchallow.start()
 func _physics_process(delta):
-	print(inputmanager)
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		kickactive = false
@@ -583,14 +583,8 @@ func _on_firetime_timeout():
 func _on_punchover_timeout():
 	animactive = true
 	moveactive = true
-	magic_active = true
-	shootactive = true 
+	
 	inputmanager = true
-	dodgeactive = true
-	kickactive = true
-	jumpactive = true
-	idlecanrun = true
-	punchactive = false
 
 func _on_punchcombo_timeout():
 	punchcombovar = 0
@@ -599,13 +593,9 @@ func _on_punchcombo_timeout():
 func _on_kickover_timeout():
 	animactive = true
 	moveactive = true
-	magic_active = true
-	dodgeactive = true
-	shootactive = true 
+	
 	inputmanager = true
-	punchactive = true
-	jumpactive = true
-	kickactive = false
+
 
 
 
