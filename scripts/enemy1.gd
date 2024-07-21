@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var coll = $coll
 @onready var collision_shape_2d = $CollisionShape2D
 
-var health = 100
+@export var health = 100
 var playerdetectentered
 var playerdetectexited
 @export var speed = 40.0
