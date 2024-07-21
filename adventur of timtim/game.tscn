@@ -5903,19 +5903,10 @@ scale = Vector2(7.382, 7.43491)
 skew = -0.00218379
 texture = ExtResource("24_civcb")
 
-[node name="savespot2" parent="." instance=ExtResource("31_6u38v")]
-position = Vector2(686, -35)
-
-[node name="savespot4" parent="." instance=ExtResource("31_6u38v")]
-position = Vector2(2440, -39)
-
 [node name="minimap" parent="." node_paths=PackedStringArray("player", "tilemap") instance=ExtResource("36_cbkhk")]
 layer = 128
 player = NodePath("../player")
 tilemap = NodePath("../TileMap")
-
-[node name="savespot3" parent="." instance=ExtResource("31_6u38v")]
-position = Vector2(4631, 2987)
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_jgnnt")
@@ -6329,37 +6320,31 @@ energy = 2.25
 texture = SubResource("GradientTexture2D_utsk6")
 
 [node name="PointLight2D34" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(2734, -93)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
 
 [node name="PointLight2D35" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(2761, -94)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
 
 [node name="PointLight2D36" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(3438, -94)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
 
 [node name="PointLight2D37" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(3466, -92)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
 
 [node name="PointLight2D38" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(3934, -94)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
 
 [node name="PointLight2D39" type="PointLight2D" parent="lights"]
-visible = false
 position = Vector2(3968, -92)
 energy = 2.95
 texture = SubResource("GradientTexture2D_ffpxh")
@@ -6370,3 +6355,6 @@ occluder = SubResource("OccluderPolygon2D_v0pfa")
 
 [node name="enemy1" parent="." instance=ExtResource("36_t05vc")]
 position = Vector2(423, -33)
+
+[node name="savespot" parent="." instance=ExtResource("31_6u38v")]
+position = Vector2(177, -45)

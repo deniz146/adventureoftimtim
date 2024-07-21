@@ -31,7 +31,7 @@ func _process(delta):
 		audio_stream_player_2d_2.play()
 
 func _ready():
-	animate.play("camera")
+
 	audio_stream_player_2d.play()
 	audio_stream_player_2d_2.play()
 	sprite_2d_2.hide()
@@ -78,8 +78,8 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 	cansave = true
 	gpu_particles_2d.emitting = true
 	point_light_2d_3.show()
-	if shakecamera:
-		animator.play("camerasave")
+
+
 	save()
 	print("save")
 		

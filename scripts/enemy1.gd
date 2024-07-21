@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var label = $Label
 @onready var arrowhitstop = $arrowhitstop
 @onready var choosestrike = $choosestrike
+@onready var coll = $coll
+@onready var collision_shape_2d = $CollisionShape2D
 
 var health = 100
 var playerdetectentered
@@ -27,10 +29,11 @@ var leftseen = false
 var rightseen = false
 @onready var playerdetect = $playerdetect
 var inattack = false
-@onready var attack_1_col = $attack1col
-@onready var attack_2_col = $attack2col
+@onready var attack_1_col = $Area2D/attack1col
+@onready var attack_2_col = $Area2D/attack2col
+
 @onready var animation_player = $AnimationPlayer
-var random 
+var random = 1
 @onready var attackover = $attackover
 var attack1 = false
 var attack2 = false
@@ -58,6 +61,9 @@ var ingethit = false
 
 
 func _physics_process(delta):
+	
+	
+	
 	animation()
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -124,17 +130,16 @@ func attack():
 	
 	if attackactive:
 		if playerdetect:
+			
 			speed = 1
 			
 			if random == 1:
+				
 				attack1 = true
-				animation_player.play("attack1col")
+				
 				attackover.start()
-			if random == 2:
-				attack2 = true
-				animation_player.play("attack2col")
-				attackover.start()
-			
+				
+		
 func gethit():
 	if gethitactive:
 		ingethit = true
@@ -157,12 +162,14 @@ func die():
 		firegethit.queue_free()
 		special_1_gethit.queue_free()
 		special_2_gethit.queue_free()
+		collision_shape_2d.queue_free()
 func animation():
 	if inidle:
 		animator.play("idle")
 	if insawplayer:
 		animator.play("run")
 	if attack1 and inattack:
+		animation_player.play("attack1col")
 		animator.play("attack")
 	if attack2 and inattack:
 		animator.play("attack2")
@@ -227,6 +234,7 @@ func _on_playerdetect_area_shape_entered(area_rid, area, area_shape_index, local
 
 func _on_attackover_timeout():
 	if playerdetectexited:
+		
 		insawplayer = true
 		sawplayeractive = true
 		inidle = false
@@ -235,6 +243,8 @@ func _on_attackover_timeout():
 		inattack = false
 	if playerdetectentered:
 		attack()
+		
+		
 
 
 func _on_playerdetect_area_shape_exited(area_rid, area, area_shape_index, local_shape_index): 
@@ -258,7 +268,7 @@ func _on_kickgethit_area_shape_entered(area_rid, area, area_shape_index, local_s
 	gethitactive = true
 
 func _on_arrowgethit_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	health -= 50
+	health -= 10
 
 	leftseen = false
 	insawplayer = false
@@ -370,8 +380,13 @@ func _on_dying_timeout():
 func _on_arrowhitstop_timeout():
 	ingethit = false
 
-func choose(array):
-	array.shuffle()
-	return array.front()
+
 func _on_choosestrike_timeout():
-	random = choose([1, 2])
+
+	choosestrike.start()
+
+
+func _on_coll_timeout():
+	print("y")
+	attack_1_col.disabled = true
+	

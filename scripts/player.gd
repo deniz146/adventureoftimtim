@@ -33,6 +33,7 @@ var punchcombovar = 0
 const player_bullet = preload("res://adventur of timtim/player_bullet.tscn")
 @onready var animator = $AnimatedSprite2D
 @onready var label = $Label
+@onready var savespot = $"../savespot"
 
 @export var SPEED = 100.0
 @export var JUMP_VELOCITY = -280.0
@@ -76,7 +77,7 @@ var bullet_count = 10
 @onready var player_death = $"player death"
 var health = 100
 @onready var stop_anim = $"stop anim"
-@onready var savespot_2 = $"../savespot2"
+const SAVESPOT = preload("res://adventur of timtim/savespot.tscn")
 @onready var health_bar = $Camera2D/health_bar
 @onready var blood = $blood
 var mana := 100
@@ -92,7 +93,6 @@ var bowdraw = false
 @onready var collision_shape_2d_2 = $"bullet kill/CollisionShape2D2"
 @onready var firesound = $fire
 
-@onready var savespot = $"../savespot"
 
 @onready var animation_player = $"../AnimationPlayer"
 
@@ -643,6 +643,8 @@ func _on_dead_timeout():
 	youdiedanim.play("new_animation")
 	_physics_process(false)
 
+	savespot.load_data()
+
 
 func _on_healthitemget_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	health += 10
@@ -673,3 +675,8 @@ func _on_havefire_area_shape_entered(area_rid, area, area_shape_index, local_sha
 
 func _on_fragmentget_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	bullet_count += 3
+
+
+func _on_get_hit_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	health -= 15
+

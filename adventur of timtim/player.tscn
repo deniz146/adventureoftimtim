@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://bnp4nxv65obwf"]
+[gd_scene load_steps=105 format=3 uid="uid://bnp4nxv65obwf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xps3h"]
 [ext_resource type="Shader" path="res://adventur of timtim/player.gdshader" id="2_0y575"]
@@ -577,6 +577,9 @@ size = Vector2(24, 28)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xfmih"]
 polygon = PackedVector2Array(-8, 16, 10, 16, 9, -10, -9, -10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebowl"]
+size = Vector2(23, 28)
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 66569
 collision_mask = 65609
@@ -903,6 +906,14 @@ stream = ExtResource("70_hip20")
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="."]
 
+[node name="get hit" type="Area2D" parent="."]
+collision_layer = 268435456
+collision_mask = 268435456
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="get hit"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_ebowl")
+
 [connection signal="timeout" from="stop anim" to="." method="_on_stop_anim_timeout"]
 [connection signal="timeout" from="player death" to="." method="_on_player_death_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
@@ -926,3 +937,4 @@ stream = ExtResource("70_hip20")
 [connection signal="area_shape_entered" from="havefire" to="." method="_on_havefire_area_shape_entered"]
 [connection signal="area_shape_entered" from="havespecial1" to="." method="_on_havespecial_1_area_shape_entered"]
 [connection signal="area_shape_entered" from="havespecial2" to="." method="_on_havespecial_2_area_shape_entered"]
+[connection signal="area_shape_entered" from="get hit" to="." method="_on_get_hit_area_shape_entered"]

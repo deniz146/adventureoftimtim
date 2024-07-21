@@ -142,6 +142,7 @@ menu={
 2d_physics/layer_26="havefire"
 2d_physics/layer_27="havespecial1"
 2d_physics/layer_28="havespecial2"
+2d_physics/layer_29="gethit"
 
 [rendering]
 
