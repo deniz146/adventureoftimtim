@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://bh8ktcr08xoy2"]
+[gd_scene load_steps=93 format=3 uid="uid://bh8ktcr08xoy2"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_1jf2r"]
 [ext_resource type="Texture2D" uid="uid://drats7hs8xma" path="res://gm assets/Tileset/Background_n_details.png" id="1_i4xee"]
@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://75p0hjq25wrx" path="res://gm assets/40 Random Items/JuiceBox.png" id="33_88j77"]
 [ext_resource type="PackedScene" uid="uid://b2js8jhdertcw" path="res://adventur of timtim/minimap.tscn" id="36_cbkhk"]
 [ext_resource type="Shader" path="res://adventur of timtim/VİGNETTE.gdshader" id="36_psagy"]
-[ext_resource type="PackedScene" uid="uid://bvu71fniamesm" path="res://adventur of timtim/enemy_1.tscn" id="36_t05vc"]
 [ext_resource type="Texture2D" uid="uid://dacf6jj5kxebx" path="res://gm assets/mana.png" id="37_gf5we"]
 [ext_resource type="PackedScene" uid="uid://csjmv0tff2n8x" path="res://adventur of timtim/changelev.tscn" id="37_yp36n"]
 
@@ -6352,9 +6351,6 @@ texture = SubResource("GradientTexture2D_ffpxh")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(50, -3)
 occluder = SubResource("OccluderPolygon2D_v0pfa")
-
-[node name="enemy1" parent="." instance=ExtResource("36_t05vc")]
-position = Vector2(423, -33)
 
 [node name="savespot" parent="." instance=ExtResource("31_6u38v")]
 position = Vector2(177, -45)

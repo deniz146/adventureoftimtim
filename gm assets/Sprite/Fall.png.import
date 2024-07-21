@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj7lj1552qvj1"
-path="res://.godot/imported/RUN.png-78177eb7f5d662d1017359a0e6dfc69c.ctex"
+uid="uid://0rvm01fmfs32"
+path="res://.godot/imported/Fall.png-8dc1f0ea10682b6abaf0869cbd90f9cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gm assets/Sprites/RUN.png"
-dest_files=["res://.godot/imported/RUN.png-78177eb7f5d662d1017359a0e6dfc69c.ctex"]
+source_file="res://gm assets/Sprite/Fall.png"
+dest_files=["res://.godot/imported/Fall.png-8dc1f0ea10682b6abaf0869cbd90f9cd.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ded0lgabg6py1"]
+[gd_scene load_steps=28 format=3 uid="uid://ded0lgabg6py1"]
 
 [ext_resource type="Shader" path="res://adventur of timtim/tileset.gdshader" id="1_l26f7"]
 [ext_resource type="PackedScene" uid="uid://cnwvwtbhoyxdx" path="res://adventur of timtim/platform.tscn" id="11_bivr3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://sv5xy1jju35s" path="res://adventur of timtim/savespot.tscn" id="20_c7a60"]
 [ext_resource type="Script" path="res://adventur of timtim/rain.gd" id="20_uj4d1"]
 [ext_resource type="Script" path="res://adventur of timtim/dust.gd" id="21_8166x"]
+[ext_resource type="PackedScene" uid="uid://bpdko03llq3qw" path="res://adventur of timtim/boss.tscn" id="21_hkukg"]
 [ext_resource type="PackedScene" uid="uid://birdrsfh4buds" path="res://adventur of timtim/inventory.tscn" id="23_qsef4"]
 [ext_resource type="PackedScene" uid="uid://bdfdfgro3j6va" path="res://adventur of timtim/health_bar.tscn" id="24_j7sst"]
 [ext_resource type="PackedScene" uid="uid://21dnwu6pujs7" path="res://adventur of timtim/playeroptions.tscn" id="25_i8qu8"]
@@ -1700,3 +1701,6 @@ position = Vector2(982, 570)
 scale = Vector2(1.18149, 1.17935)
 skew = -0.00218379
 texture = ExtResource("20_afjav")
+
+[node name="boss" parent="." instance=ExtResource("21_hkukg")]
+position = Vector2(2994, 1478)
